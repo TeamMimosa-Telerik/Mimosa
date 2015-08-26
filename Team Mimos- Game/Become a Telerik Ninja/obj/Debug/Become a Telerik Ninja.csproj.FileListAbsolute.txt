@@ -1,0 +1,6 @@
+C:\Users\Dragomir\Desktop\WebApplication2\WebApplication2\bin\WebApplication2.dll.config
+C:\Users\Dragomir\Desktop\WebApplication2\WebApplication2\bin\WebApplication2.dll
+C:\Users\Dragomir\Desktop\WebApplication2\WebApplication2\bin\WebApplication2.pdb
+C:\Users\Dragomir\Desktop\WebApplication2\WebApplication2\obj\Debug\Become a Telerik Ninja.csprojResolveAssemblyReference.cache
+C:\Users\Dragomir\Desktop\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
+C:\Users\Dragomir\Desktop\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb

@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="scripts/jquery-2.1.4.js"></script>  
+    <link href="styles/style.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div id="container">
+        <header>
+            <div id="badgeContainer">
+                <img class="blured"  src="Resources/Pictures/badge1.png" />
+                <img class="blured" src="Resources/Pictures/badge2.png" />
+                <img class="blured" src="Resources/Pictures/badge3.png" />
+                <img class="blured" src="Resources/Pictures/badge4.png" />
+            </div>
+
+            <span id="answerText">Answeres: </span>
+           <span id="currentCorrectAnsweres" class="answeredCount">0</span>
+            <span class="answeredCount">/</span>
+            <span id="totalAnswersExpected" class="answeredCount">10</span> 
+
+            <div id="playerAndPoints">
+                <a href="#" id="playerNameContainer">Player</a>
+                <div id="separator"></div>
+                <span id="currentPlayerPoints">4000</span>
+            </div>
+        </header>
+
+        <section id="questionZone">
+            
+
+        </section>
+
+        <script id="questionContent" type="text/x-handlebars-template">
+            <div id="questionHeader">
+                <h1>{{questionText}}</h1>
+            </div>
+            <div id="questioBody">
+                <div class="percental" ><span>{{optionOne}}</span></div>
+                <div class="percental" ><span>{{optionTwo}}</span></div>
+                <br />
+                <div class="percental" ><span>{{optionThree}}</span></div>
+                <div class="percental" ><span>{{optionFour}}</span></div>
+            </div>
+        </script>
+        <script src="scripts/handlebars-v3.0.3.js"></script>
+        <script>
+            var currentQuestion = {
+                questionText: 'How many engineers are needed to fix a lightbulb?',
+                optionOne: ' The new your police departament',
+                optionTwo: '2',
+                optionThree: '3',
+                optionFour: '1dfvvgdf4'
+            };
+            var htmlTaker = document.getElementById('questionContent').innerHTML;
+            var workingHTML = Handlebars.compile(htmlTaker);
+            document.getElementById('questionZone').innerHTML= workingHTML(currentQuestion);
+        </script>
+
+
+        <aside>
+            <div id="announcer"><a href="#">Select category</a><img id="arrow" src="Resources/Pictures/downArrow.png" /></div>           
+            <div id="categoryContainer">
+                <div class="category"><a href="#">Kids Academy</a></div>
+                <div class="category"><a href="#">School Academy</a></div>
+                <div class="category"><a href="#">Algo Academy</a></div>
+                <div class="category"><a href="#">Software Academy</a></div>
+            </div>
+        </aside>
+        
+        <script src="scripts/events.js"></script>
+
+        <footer>
+            <h2>Property of Telerik Academy. Designed by Team Mimosa</h2>
+        </footer>
+    </div>
+</body>
+</html>
