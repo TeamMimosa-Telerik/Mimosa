@@ -1,0 +1,22 @@
+{
+  "name": "TestSetup",
+  "version": "0.0.0",
+  "authors": [
+    "AntonioFilipov <tonkatafilipov@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "handlebars": "~3.0.3",
+    "handlebars-layouts": "~3.1.0",
+    "jquery": "~2.1.4"
+  }
+}
