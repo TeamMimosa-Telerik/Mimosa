@@ -2,52 +2,174 @@
 <html>
 <head>
     <title>Test</title>
-    <link href="../lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../lib/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
-    <link href="../css/indexStyles.css" rel="stylesheet" />
+    <link href="../lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../lib/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet"/>
+    <link href="../css/indexStyles.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/nav-css/style.css">
+    <link rel="stylesheet" href="../css/nav-css/reset.css">
+    <link rel="/stylesheet" href="../css/nav-css/styles.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
+
+    <script> Parse.initialize("6V83omVEISgfzl9kIe2ENYxtERBUJ2nlrruGogFs", "nhr3xvaAlRmnVxGiOSyARYLskitpzwdmlUuDCHKC");</script>
 </head>
 <body>
 
-    <div class="site-wrapper">
+<div class="site-wrapper">
 
-        <div class="site-wrapper-inner">
+    <div class="site-wrapper-inner">
 
-            <div class="cover-container">
+        <div class="cover-container">
 
-                <div class="masthead clearfix">
-                    <div class="inner">
-                        <h3 class="masthead-brand">
-                            <img src="../img/TeamMimosaHardWorkingNinja.jpg" id="masterNinja" alt="Hardworking ninja!" class="img-circle img-responsive" />
-                        </h3>
-                        <nav>
-                            <ul class="nav masthead-nav">
-                                <li class="active"><a href="#">Home</a></li>
-                                <li><a href="#">Sign Up</a></li>
-                                <li><a href="#">Rules</a></li>
-                            </ul>
-                        </nav>
-                    </div>
+            <div class="masthead clearfix">
+                <div class="inner">
+                    <h3 class="masthead-brand">
+                        <img src="../img/TeamMimosaHardWorkingNinja.jpg" id="masterNinja" alt="Hardworking ninja!"
+                             class="img-circle img-responsive"/>
+                    </h3>
+                    <nav>
+                        <ul class="nav masthead-nav">
+                            <li id="login">
+                                <a id="login-trigger" href="#">
+                                    Log in <span>&#x25BC;</span>
+                                </a>
+
+                                <div id="login-content">
+                                    <form id="login-form">
+                                        <fieldset id="inputs-login">
+                                            <input id="username-login" name="Username" placeholder="Username" required>
+                                            <input id="password-login" type="password" name="Password" placeholder="Password"
+                                                   required>
+                                        </fieldset>
+                                        <fieldset id="actions-login">
+                                            <input type="button" id="submit-login" value="Log in">
+
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </li>
+                            <li id="signup">
+                                <a id="signup-trigger" href="#">
+                                    Sign up <span>&#x25BC;</span>
+                                </a>
+
+                                <div id="signup-content">
+                                    <form action="">
+                                        <fieldset id="inputs-signup">
+                                            <input id="email" type="email" name="Email" placeholder="Your email address" required>
+                                            <input id="password-signup" type="password" name="Password" placeholder="Password"
+                                                   required>
+                                            <input id="confirm-password-signup" type="password" name="ConfirmPassword"
+                                                   placeholder="Confirm Password" required>
+                                            <input id="username-signup" name="Username" placeholder="Choose Username" required>
+                                        </fieldset>
+                                        <fieldset id="actions-signup">
+                                            <input type="button" id="submit-signup" value="Sign up">
+
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </li>
+                            <li id="user-name"></li>
+                            <li id="signout">
+                                <a id="signout-trigger" href="#">Sign out</a>
+                            </li>
+                        </ul>
+                    </nav>
+
                 </div>
 
-                <div class="inner cover">
-                    <h1 class="cover-heading">Who wants to become a Telerik <span id="ninjaSpan">NINJA</span></h1>
-                    <p class="lead">Code&nbsp;&nbsp;Play&nbsp;&nbsp;Conquer</p>
-                    <p class="lead">
-                        <a href="#" class="btn btn-lg btn-default">Log In</a>
-                    </p>
-                </div>
+            </div>
 
-                <div class="mastfoot">
-                    <div class="inner">
-                        <p id="teamName">Team Mimosa&trade;</p>
-                    </div>
-                </div>
+            <div class="inner cover">
+                <h1 class="cover-heading">Who wants to become a Telerik <span id="ninjaSpan">NINJA</span></h1>
 
+                <p class="lead">Code&nbsp;&nbsp;Play&nbsp;&nbsp;Conquer</p>
+
+                <p class="lead">
+                    <a href="#" class="btn btn-lg btn-default">Log In</a>
+                </p>
+            </div>
+
+            <div class="mastfoot">
+                <div class="inner">
+                    <p id="teamName">Team Mimosa&trade;</p>
+                </div>
             </div>
 
         </div>
 
     </div>
+
+</div>
+<script src="../js/toggle.js"></script>
+<script src="../js/signup.js"></script>
+<script src="../js/signin.js"></script>
+<script src="../js/signout.js"></script>
+<script type="text/javascript">   /*globals  require global*/
+
+
+
+//user.set("username", "alek");
+//user.set("password", "123");
+//user.set("email", "email@example.com");
+// other fields can be set just like with Parse.Object
+// user.set("phone", "415-392-0202");
+//signUp(user);
+$(document).ready(function () {
+    //Parse.User.logOut();
+    //console.log(Parse.User.current());
+    var currentUser = Parse.User.current();
+    $('#signout').hide();
+    if (currentUser) {
+        $('#signout').show();
+        $('#login').hide();
+        $('#signup').hide();
+
+    }
+    else {
+        $('#signout').hide();
+    }
+
+    $('#submit-login').click(function () {
+        // if(username!=undefined && password!=undefined) {
+        var username = $('#username-login').val();
+        var password = $('#password-login').val();
+        signIn(username, password);
+        //console.log('Username '+user.get('username'));
+        $('#signout').show();
+        $('#login').hide();
+        $('#signup').hide();
+        $('#user-name').html('Welcome ' + Parse.User.current().get('username')).show();
+
+
+        // }
+    });
+
+    $('#submit-signup').click(function () {
+
+        var username = $('#username-signup').val();
+        var password = $('#password-signup').val();
+        var email = $('#email').val();
+        var user = new Parse.User();
+        user.set("username", username);
+        user.set("password", password);
+        user.set("email", email);
+        signUp(user);
+
+    });
+    $('#signout').click(function () {
+        signOut();
+        $('#signout').hide();
+        $('#login').show();
+        $('#signup').show();
+        $('#user-name').hide();
+    });
+
+});
+
+
+</script>
 
 </body>
 </html>
