@@ -39,7 +39,7 @@ $(document).ready(function () {
                 $('#user-name').html('Welcome ' + Parse.User.current().get('username')).show();
 
             }, function (error) {
-                console.log(user.message);
+                console.log(error.message);
                 alert(error.message);
             });
         //console.log('Username '+user.get('username'));
