@@ -3,5 +3,9 @@
  */
 function signOut(){
  Parse.User.logOut();
+ $('#signout').hide();
+ $('#login').show();
+ $('#signup').show();
+ $('#user-name').hide();
 
 }

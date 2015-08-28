@@ -6,6 +6,10 @@ function signUp(user) {
     user.signUp(null, {
         success: function (user) {
             alert('Thanks for your sign up');
+            $('#signout').show();
+            $('#login').hide();
+            $('#signup').hide();
+            $('#user-name').html('Welcome ' + Parse.User.current().get('username')).show();
             // Hooray! Let them use the app now.
         },
         error: function (user, error) {

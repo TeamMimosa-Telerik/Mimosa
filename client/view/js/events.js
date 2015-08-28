@@ -32,10 +32,7 @@ $(document).ready(function () {
         var password = $('#password-login').val();
         signIn(username, password);
         //console.log('Username '+user.get('username'));
-        $('#signout').show();
-        $('#login').hide();
-        $('#signup').hide();
-        $('#user-name').html('Welcome ' + Parse.User.current().get('username')).show();
+
 
 
         // }
@@ -55,10 +52,7 @@ $(document).ready(function () {
     });
     $('#signout').click(function () {
         signOut();
-        $('#signout').hide();
-        $('#login').show();
-        $('#signup').show();
-        $('#user-name').hide();
+
     });
 
 });
