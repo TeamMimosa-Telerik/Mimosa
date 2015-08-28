@@ -6,6 +6,7 @@ function signUp(user) {
     user.signUp(null, {
         success: function (user) {
             alert('Thanks for your sign up');
+
             $('#signout').show();
             $('#login').hide();
             $('#signup').hide();

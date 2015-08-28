@@ -7,5 +7,10 @@ function signOut(){
  $('#login').show();
  $('#signup').show();
  $('#user-name').hide();
+ if ($('#signup-trigger').hasClass('active')) {
+  $('#signup-trigger').find('span').html('&#x25BC;');
+  $('#signup-trigger').next('#signup-content').slideToggle();
+  $('#signup-trigger').toggleClass('active');
+ }
 
 }
