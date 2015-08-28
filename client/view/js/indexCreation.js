@@ -1,7 +1,7 @@
 function solve() {
     return function () {
-        var $body = $('body'),
-            $wrapper = $('<div class="site-wrapper"></div>'),
+
+           var $wrapper = $('<div id="wrapper" class="site-wrapper"></div>'),
             $innerWrapper = $(' <div class="site-wrapper-inner"></div>'),
             $coverContainer = $('<div class="cover-container"></div>'),
             $mastHead = $(' <div class="masthead clearfix"></div>'),
@@ -29,7 +29,7 @@ function solve() {
         //innerCover
         $innerCover.append($coverHeading)
             .append($('<p class="lead">Code&nbsp;&nbsp;Play&nbsp;&nbsp;Conquer</p>'))
-            .append($('<p class="lead"> <a href="#" class="btn btn-lg btn-default">Log In</a> </p>'));
+            .append($('<p class="lead"> <a href="#" id="play"class="btn btn-lg btn-default">Log In</a> </p>'));
         //innerCover END
 
         // mastHead
@@ -56,7 +56,7 @@ function solve() {
         $coverContainer.append($mastHead).append($innerCover).append($mastFoot);
         $innerWrapper.append($coverContainer);
         $wrapper.append($innerWrapper);
-        $body.append($wrapper);
+        return $wrapper;
     };
 };
 

@@ -104,9 +104,17 @@
 </div>-->
 <script src="../lib/jquery/dist/jquery.js"></script>
 <script src="../js/indexCreation.js"></script>
+<script src="../js/SecondPageExample.js"></script>
+<script src="../../controller/routerController.js"></script>
 <script>
     var func = solve();
-    func();
+    var wrapper=func();
+    var $body = $('body');
+    $body.append(wrapper);
+    var func1 = solveSecondPage();
+    var secondPage=func1();
+    $body.append(secondPage);
+    $('#secondPageWrapper').hide();
 </script>
 
 
