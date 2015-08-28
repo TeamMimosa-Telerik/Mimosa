@@ -12,5 +12,11 @@ function signOut(){
   $('#signup-trigger').next('#signup-content').slideToggle();
   $('#signup-trigger').toggleClass('active');
  }
+ if ($('#login-trigger').hasClass('active')){
+  $('#login-trigger').next('#login-content').slideToggle();
+  $('#login-trigger').find('span').html('&#x25BC;');
+  $('#login-trigger').toggleClass('active');
+ }
+
 
 }
