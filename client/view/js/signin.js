@@ -1,29 +1,16 @@
-function signIn(username,password) {
+function signIn(username, password) {
     var user = new Parse.User();
-    Parse.User.logIn(username, password, {
-        success: function (user) {
+    var promise = new Parse.Promise();
 
-            alert('Welcomeeeee');
-            // Do stuff after successful login.
-            Parse.User.become(Parse.Session.sessionToken).then(function (user) {
-                // The current user is now set to user.
-                alert('The user is set');
-                $('#signout').show();
-                $('#login').hide();
-                $('#signup').hide();
-                $('#user-name').html('Welcome ' + Parse.User.current().get('username')).show();
-            }, function (error) {
-                alert('The user is not set');
-                // The token could not be validated.
-            });
-        },
-        error: function (user, error) {
-            console.log(user.message);
-            alert(error.message);
+    Parse.User.logIn(username, password)
+        .then(function (user) {
+            return Parse.User.become(Parse.Session.sessionToken);
+        }).then(function (user) {
+            promise.resolve(user);
+        }, function (error) {
+            promise.reject(error);
+        });
+    return promise;
 
-            // The login failed. Check error to see why.
-        }
-    });
-    return user;
 }
 

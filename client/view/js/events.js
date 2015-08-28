@@ -20,7 +20,7 @@ $(document).ready(function () {
         $('#signout').show();
         $('#login').hide();
         $('#signup').hide();
-
+        $('#user-name').html('Welcome ' + Parse.User.current().get('username')).show();
     }
     else {
         $('#signout').hide();
@@ -30,9 +30,19 @@ $(document).ready(function () {
         // if(username!=undefined && password!=undefined) {
         var username = $('#username-login').val();
         var password = $('#password-login').val();
-        signIn(username, password);
-        //console.log('Username '+user.get('username'));
+        signIn(username, password)
+            .then(function (user) {
+                alert('The user is set');
+                $('#signout').show();
+                $('#login').hide();
+                $('#signup').hide();
+                $('#user-name').html('Welcome ' + Parse.User.current().get('username')).show();
 
+            }, function (error) {
+                console.log(user.message);
+                alert(error.message);
+            });
+        //console.log('Username '+user.get('username'));
 
 
         // }
@@ -47,7 +57,15 @@ $(document).ready(function () {
         user.set("username", username);
         user.set("password", password);
         user.set("email", email);
-        signUp(user);
+        signUp(user).then(function (user) {
+            alert('Thanks for your sign up');
+            $('#signout').show();
+            $('#login').hide();
+            $('#signup').hide();
+            $('#user-name').html('Welcome ' + Parse.User.current().get('username')).show();
+        }, function (error) {
+            alert("Error: " + error.code + " " + error.message);
+        });
 
     });
     $('#signout').click(function () {
