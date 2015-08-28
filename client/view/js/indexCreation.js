@@ -21,18 +21,18 @@ function solve() {
             $signUpContent = $('<div id="signup-content"></div>'),
             $signUpForm = $('<form action=""></form>')
             $coverHeading = $('<h1 class="cover-heading">Who wants to become a Telerik <span id="ninjaSpan">NINJA</span></h1>');
-//mastFoot
+        //mastFoot
         $mastFoot.append($('<div class="inner"> <p id="teamName">Team Mimosa&trade;</p> </div>'));
 
-//mastFoor END
+        //mastFoor END
 
-//innerCover
+        //innerCover
         $innerCover.append($coverHeading)
             .append($('<p class="lead">Code&nbsp;&nbsp;Play&nbsp;&nbsp;Conquer</p>'))
             .append($('<p class="lead"> <a href="#" class="btn btn-lg btn-default">Log In</a> </p>'));
-//innerCover END
+        //innerCover END
 
-// mastHead
+        // mastHead
         $signOutLi.append($('<a id="signout-trigger" href="#">Sign out</a>'));
 
         $signUpForm.append($('<fieldset id="inputs-signup"> <input id="email" type="email" name="Email" placeholder="Your email address" required> <input id="password-signup" type="password" name="Password" placeholder="Password" required> <input id="confirm-password-signup" type="password" name="ConfirmPassword" placeholder="Confirm Password" required> <input id="username-signup" name="Username" placeholder="Choose Username" required> </fieldset>'))
@@ -42,7 +42,7 @@ function solve() {
             .append($signUpContent);
 
         $logInForm.append($('<fieldset id="inputs-login"> <input id="username-login" name="Username" placeholder="Username" required> <input id="password-login" type="password" name="Password" placeholder="Password" required> </fieldset>'))
-            .append($('<fieldset id="actions-login"> <input type="button" id="submit-login" value="Log in"> </fieldset>'));
+            .append($('<fieldset id="actions-login"> <input type="button" id="submit-login" value="Play"> </fieldset>'));
         $logInContent.append($logInForm);
         $logInLi.append($(' <a id="login-trigger" href="#">Log in <span>&#x25BC;</span></a>'))
             .append($logInContent);
@@ -51,15 +51,12 @@ function solve() {
         $nav.append($ul);
         $innerDiv.append($hThree).append($nav);
         $mastHead.append($innerDiv);
-//mastHead END
-
-
+        //mastHead END
 
         $coverContainer.append($mastHead).append($innerCover).append($mastFoot);
         $innerWrapper.append($coverContainer);
         $wrapper.append($innerWrapper);
         $body.append($wrapper);
-
     };
 };
 
