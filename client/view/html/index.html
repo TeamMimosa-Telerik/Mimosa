@@ -10,119 +10,76 @@
     <link rel="/stylesheet" href="../css/nav-css/styles.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
+    <link href="../css/categoryPageStyles.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="../lib/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="../css/mainGamepageStyles.css" />  <!--tova raboti-->
 
+    <script src="../lib/handlebars/handlebars.js"></script>
     <script> Parse.initialize("6V83omVEISgfzl9kIe2ENYxtERBUJ2nlrruGogFs", "nhr3xvaAlRmnVxGiOSyARYLskitpzwdmlUuDCHKC");</script>
 </head>
 <body>
 
-<!--<div class="site-wrapper">
-
-    <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-
-            <div class="masthead clearfix">
-                <div class="inner">
-                    <h3 class="masthead-brand">
-                        <img src="../img/TeamMimosaHardWorkingNinja.jpg" id="masterNinja" alt="Hardworking ninja!"
-                             class="img-circle img-responsive"/>
-                    </h3>
-                    <nav>
-                        <ul class="nav masthead-nav">
-                            <li id="login">
-                                <a id="login-trigger" href="#">
-                                    Log in <span>&#x25BC;</span>
-                                </a>
-
-                                <div id="login-content">
-                                    <form id="login-form">
-                                        <fieldset id="inputs-login">
-                                            <input id="username-login" name="Username" placeholder="Username" required>
-                                            <input id="password-login" type="password" name="Password" placeholder="Password"
-                                                   required>
-                                        </fieldset>
-                                        <fieldset id="actions-login">
-                                            <input type="button" id="submit-login" value="Log in">
-
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </li>
-                            <li id="signup">
-                                <a id="signup-trigger" href="#">
-                                    Sign up <span>&#x25BC;</span>
-                                </a>
-
-                                <div id="signup-content">
-                                    <form action="">
-                                        <fieldset id="inputs-signup">
-                                            <input id="email" type="email" name="Email" placeholder="Your email address" required>
-                                            <input id="password-signup" type="password" name="Password" placeholder="Password"
-                                                   required>
-                                            <input id="confirm-password-signup" type="password" name="ConfirmPassword"
-                                                   placeholder="Confirm Password" required>
-                                            <input id="username-signup" name="Username" placeholder="Choose Username" required>
-                                        </fieldset>
-                                        <fieldset id="actions-signup">
-                                            <input type="button" id="submit-signup" value="Sign up">
-
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </li>
-                            <li id="user-name"></li>
-                            <li id="signout">
-                                <a id="signout-trigger" href="#">Sign out</a>
-                            </li>
-                        </ul>
-                    </nav>
-
-                </div>
-
-            </div>
-
-            <div class="inner cover">
-                <h1 class="cover-heading">Who wants to become a Telerik <span id="ninjaSpan">NINJA</span></h1>
-
-                <p class="lead">Code&nbsp;&nbsp;Play&nbsp;&nbsp;Conquer</p>
-
-                <p class="lead">
-                    <a href="#" class="btn btn-lg btn-default">Log In</a>
-                </p>
-            </div>
-
-            <div class="mastfoot">
-                <div class="inner">
-                    <p id="teamName">Team Mimosa&trade;</p>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>-->
 <script src="../lib/jquery/dist/jquery.js"></script>
 <script src="../js/indexCreation.js"></script>
 <script src="../js/SecondPageExample.js"></script>
 <script src="../../controller/routerController.js"></script>
+<script src="../js/secondPageCreation.js"></script>
+<script src="../js/mainGamepageCreation.js"></script>
 <script>
-    var func = solve();
-    var wrapper=func();
     var $body = $('body');
-    $body.append(wrapper);
-    var func1 = solveSecondPage();
-    var secondPage=func1();
-    $body.append(secondPage);
-    $('#secondPageWrapper').hide();
+
+    var index = indexCreation();
+    var firstWrapper=index();
+    $body.append(firstWrapper);
+
+    var secondPage = secondPageCreation();
+    var secondWrapper=secondPage();
+    $body.append(secondWrapper);
+    secondWrapper.hide();
+
+    var thirdPage=thirdPage();
+    var thirdWrapper=thirdPage();
+    $body.append(thirdWrapper);
+    thirdWrapper.hide();
 </script>
 
 
-<script src="../js/toggleNavigation.js"></script>
+<script src="../js/events/toggleNavigation.js"></script>
 <script src="../../model/signup.js"></script>
 <script src="../../model/signin.js"></script>
 <script src="../../model/signout.js"></script>
 <script src="../../controller/loggerController.js"></script>
 
+<script src="../js/mainGamepageCreation.js"></script>
+
+<script src="../js/events/mainGamepageEvents.js"></script>
+
+<script id="questionContent" type="text/x-handlebars-template">
+    <div id="questionHeader">
+        <h2>{{questionText}}</h2>
+    </div>
+    <div id="questioBody">
+        <div id="1" class="percental"><span>{{optionOne}}</span></div>
+        <div id="2" class="percental"><span>{{optionTwo}}</span></div>
+        <br />
+        <div id="3" class="percental"><span>{{optionThree}}</span></div>
+        <div id="4" class="percental"><span>{{optionFour}}</span></div>
+
+    </div>
+</script>
+
+<script>
+    var currentQuestion = {
+        questionText: 'How many engineers are needed to fix a lightbulb?',
+        optionOne: ' The police ',
+        optionTwo: '2',
+        optionThree: '3',
+        optionFour: '1dfvvgdf4'
+    };
+    var htmlTaker = document.getElementById('questionContent').innerHTML;
+    var workingHTML = Handlebars.compile(htmlTaker);
+    document.getElementById('questionHolder').innerHTML = workingHTML(currentQuestion);
+</script>
 </body>
 </html>

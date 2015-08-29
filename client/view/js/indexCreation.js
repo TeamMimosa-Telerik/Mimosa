@@ -1,6 +1,5 @@
-function solve() {
+function indexCreation() {
     return function () {
-
            var $wrapper = $('<div id="wrapper" class="site-wrapper"></div>'),
             $innerWrapper = $(' <div class="site-wrapper-inner"></div>'),
             $coverContainer = $('<div class="cover-container"></div>'),
@@ -29,10 +28,11 @@ function solve() {
         //innerCover
         $innerCover.append($coverHeading)
             .append($('<p class="lead">Code&nbsp;&nbsp;Play&nbsp;&nbsp;Conquer</p>'))
-            .append($('<p class="lead"> <a href="#" id="play"class="btn btn-lg btn-default">Log In</a> </p>'));
+            .append($('<p class="lead"> <a href="#" id="play"class="btn btn-lg btn-default">Play</a> </p>'));
         //innerCover END
 
         // mastHead
+
         $signOutLi.append($('<a id="signout-trigger" href="#">Sign out</a>'));
 
         $signUpForm.append($('<fieldset id="inputs-signup"> <input id="email" type="email" name="Email" placeholder="Your email address" required> <input id="password-signup" type="password" name="Password" placeholder="Password" required> <input id="confirm-password-signup" type="password" name="ConfirmPassword" placeholder="Confirm Password" required> <input id="username-signup" name="Username" placeholder="Choose Username" required> </fieldset>'))
@@ -42,7 +42,7 @@ function solve() {
             .append($signUpContent);
 
         $logInForm.append($('<fieldset id="inputs-login"> <input id="username-login" name="Username" placeholder="Username" required> <input id="password-login" type="password" name="Password" placeholder="Password" required> </fieldset>'))
-            .append($('<fieldset id="actions-login"> <input type="button" id="submit-login" value="Play"> </fieldset>'));
+            .append($('<fieldset id="actions-login"> <input type="button" id="submit-login" value="Log in"> </fieldset>'));
         $logInContent.append($logInForm);
         $logInLi.append($(' <a id="login-trigger" href="#">Log in <span>&#x25BC;</span></a>'))
             .append($logInContent);
