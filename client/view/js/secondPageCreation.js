@@ -1,5 +1,5 @@
 ﻿import 'jquery';
-// import '../lib/bootstrap/dist/js/bootstrap.js';
+//import 'bootstrap';
 
 function secondPageCreation() {
     var $documentFragment = $(document.createDocumentFragment());
