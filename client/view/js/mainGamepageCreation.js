@@ -6,10 +6,10 @@ function thirdPage() {
             $badgeHolder = $('<div id="badgeContainer" class="col-md-3">'),
             $currentCorrectAnswersContainer = $(' <div id="countsContainer" class="col-md-6">'),
             $playerNameAndPoints = $('<div id="playerAndPoints" class="col-md-3">');
-        $badgeHolder.append('<img id="badge1" class="blured" src="../img/badge1.png" />');
-        $badgeHolder.append('<img id="badge2" class="blured"src="../img/badge2.png" />');
-        $badgeHolder.append('<img id="badge3" class="blured" src="../img/badge3.png" />');
-        $badgeHolder.append('<img id="badge4" class="blured" src="../img/badge4.png" />');
+        $badgeHolder.append('<img class="blured" src="../img/badge1.png" />');
+        $badgeHolder.append('<img class="blured"src="../img/badge2.png" />');
+        $badgeHolder.append('<img class="blured" src="../img/badge3.png" />');
+        $badgeHolder.append('<img class="blured" src="../img/badge4.png" />');
         $currentCorrectAnswersContainer.append('<span id="answerText">Answers: </span>');
         $currentCorrectAnswersContainer.append('<span id="currentCorrectAnsweres" class="answeredCount">0</span>');
         $currentCorrectAnswersContainer.append('<span class="answeredCount">/</span>');
