@@ -69,13 +69,17 @@
     </div>
 </script>
 
-
-    <script src="../js/settingJSONObject.js"></script>
-
-    <script src="../js/manipulatingJSONObjectData.js"></script>
-
-    <script src="../js/implementingNextQuestion.js"></script>
-
-
+<script>
+    var currentQuestion = {
+        questionText: 'How many engineers are needed to fix a lightbulb?',
+        optionOne: ' The police ',
+        optionTwo: '2',
+        optionThree: '3',
+        optionFour: '1dfvvgdf4'
+    };
+    var htmlTaker = document.getElementById('questionContent').innerHTML;
+    var workingHTML = Handlebars.compile(htmlTaker);
+    document.getElementById('questionHolder').innerHTML = workingHTML(currentQuestion);
+</script>
 </body>
 </html>
