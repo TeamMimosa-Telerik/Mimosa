@@ -3,17 +3,12 @@
  */
 /*globals  require global*/
 
+import sign from '../model/signin.js';
+import signO from '../model/signout.js';
+import signU from '../model/signup.js';
 
-
-//user.set("username", "alek");
-//user.set("password", "123");
-//user.set("email", "email@example.com");
-// other fields can be set just like with Parse.Object
-// user.set("phone", "415-392-0202");
-//signUp(user);
-$(document).ready(function () {
-    //Parse.User.logOut();
-    //console.log(Parse.User.current());
+function loggerEvents(){
+    
     var currentUser = Parse.User.current();
     $('#signout').hide();
     if (currentUser) {
@@ -28,9 +23,10 @@ $(document).ready(function () {
 
     $('#submit-login').click(function () {
         // if(username!=undefined && password!=undefined) {
+        // console.log(signIn);
         var username = $('#username-login').val();
         var password = $('#password-login').val();
-        signIn(username, password)
+        sign.signIn(username, password)
             .then(function (user) {
                 alert('The user is set');
                 $('#signout').show();
@@ -57,7 +53,7 @@ $(document).ready(function () {
         user.set("username", username);
         user.set("password", password);
         user.set("email", email);
-        signUp(user).then(function (user) {
+        signU.signUp(user).then(function (user) {
             alert('Thanks for your sign up');
             $('#signout').show();
             $('#login').hide();
@@ -69,9 +65,11 @@ $(document).ready(function () {
 
     });
     $('#signout').click(function () {
-        signOut();
+        signO.signOut();
 
     });
 
-});
+}
+
+export default {loggerEvents};
 

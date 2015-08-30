@@ -1,13 +1,14 @@
 "use strict"
+import page3 from '../mainGamepageCreation.js';
+function init(){
 
-var questionPageCtrl = (function(){
-
-	var init = function(){
 		// .js file for question page
-	};
+	var $body = $('body');
+	$body.empty();
+	var thirdPage=page3.thirdPage();
+    $body.append(thirdPage);
 
-	return {
-		init: init
-	};
+};
 
-}());
+export default {init}
+

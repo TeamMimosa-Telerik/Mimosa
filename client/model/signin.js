@@ -14,3 +14,6 @@ function signIn(username, password) {
 
 }
 
+export default {signIn};
+
+
