@@ -3,7 +3,7 @@
 <head>
     <title>Test</title>
 
-    <script src="../lib/system.js/dist/system.js"></script>
+    <script src="view/lib/system.js/dist/system.js"></script>
     <!-- <script src="../js/tools/router.js"></script> -->
 <!--     <script src="../js/controllers/categoryPageController.js"></script>
     <script src="../js/controllers/loginPageController.js"></script>
@@ -18,26 +18,26 @@
     </script> -->
 
 
-    <link href="../lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="../lib/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet"/>
-    <link href="../css/indexStyles.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="../css/nav-css/style.css">
-    <link rel="stylesheet" href="../css/nav-css/reset.css">
-    <link rel="/stylesheet" href="../css/nav-css/styles.css">
+    <link href="view/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="view/lib/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet"/>
+    <link href="view/css/indexStyles.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="view/css/nav-css/style.css">
+    <link rel="stylesheet" href="view/css/nav-css/reset.css">
+    <link rel="/stylesheet" href="view/css/nav-css/styles.css">
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
 
-    <link href="../css/categoryPageStyles.css" rel="stylesheet" />
+    <link href="view/css/categoryPageStyles.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="../css/mainGamepageStyles.css" />  <!--tova raboti-->
+    <link rel="stylesheet" href="view/css/mainGamepageStyles.css" />  <!--tova raboti-->
 
     <script> Parse.initialize("6V83omVEISgfzl9kIe2ENYxtERBUJ2nlrruGogFs", "nhr3xvaAlRmnVxGiOSyARYLskitpzwdmlUuDCHKC");</script>
 </head>
 <body>
     
 
-    <script src="../js/config.js"></script>
+    <script src="view/js/config.js"></script>
 
 <!--     <script src="../lib/bootstrap/dist/js/bootstrap.js"></script> -->
 
@@ -65,7 +65,7 @@
 
 <script>
     console.log("index page before System.import");
-    System.import('../js/app.js')
+    System.import('view/js/app.js')
             .then(function (module) {
                 console.log("index page in promise");
                 module.init();
