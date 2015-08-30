@@ -65,7 +65,7 @@
 
 <script>
     console.log("index page before System.import");
-    System.import('view/js/app.js')
+    System.import('./view/js/app.js')
             .then(function (module) {
                 console.log("index page in promise");
                 module.init();
