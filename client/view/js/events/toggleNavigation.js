@@ -1,4 +1,4 @@
-$(document).ready(function () {
+function toggleNavigationEvents(){
     $('#login-trigger').click(function () {
 
         if ($('#signup-trigger').hasClass('active')) {
@@ -15,8 +15,8 @@ $(document).ready(function () {
             $(this).find('span').html('&#x25B2;');
                   }
         else
-            $(this).find('span').html('&#x25BC;')
-    })
+            $(this).find('span').html('&#x25BC;');
+    });
 
     $('#signup-trigger').click(function () {
 
@@ -33,7 +33,9 @@ $(document).ready(function () {
         $(this).toggleClass('active');
 
         if ($(this).hasClass('active'))
-            $(this).find('span').html('&#x25B2;')
-        else $(this).find('span').html('&#x25BC;')
-    })
-});
+            $(this).find('span').html('&#x25B2;');
+        else $(this).find('span').html('&#x25BC;');
+    });
+}
+
+export default {toggleNavigationEvents};

@@ -9,3 +9,5 @@ function signUp(user) {
         });
     return promise;
 }
+
+export default {signUp};
