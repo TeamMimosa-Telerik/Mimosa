@@ -9,14 +9,14 @@ function secondPageCreation() {
         $header = $('<div class="col-md-6 col-md-offset-3" id="header">Pick a category</div>'),
         $secondRow = $('<div class="row">'),
         $firstCategory = $('<a id="first-category-btn" href="#/question" class="col-md-3 col-md-offset-2">'),
-        $kidsAcademy = $('<img src="../img/KidsAcademy.jpg" class="img-responsive img-rounded" id="KidsAcademy" />'),
+        $kidsAcademy = $('<img src="view/img/KidsAcademy.jpg" class="img-responsive img-rounded" id="KidsAcademy" />'),
         $secondCategory = $('<a href="#/question" class="col-md-3 col-md-offset-2">'),
-        $schoolAcademy = $('<img src="../img/SchoolAcademy.jpg" class="img-responsive img-rounded" id="SchoolAcademy" />'),
+        $schoolAcademy = $('<img src="view/img/SchoolAcademy.jpg" class="img-responsive img-rounded" id="SchoolAcademy" />'),
         $thirdRow = $('<div class="row">'),
         $thirdCateogry = $('<a href="#/question" class="col-md-3 col-md-offset-2">'),
-        $algoAcademy = $('<img src="../img/AlgoAcademy.jpg" class="img-responsive img-rounded" id="AlgoAcademy" />'),
+        $algoAcademy = $('<img src="view/img/AlgoAcademy.jpg" class="img-responsive img-rounded" id="AlgoAcademy" />'),
         $fourthCategory = $('<a href="#/question" class="col-md-3 col-md-offset-2">'),
-        $softwareAcademy = $('<img src="../img/SoftwareAcademy.jpg" class="img-responsive img-rounded" id="SoftwareAcademy" />');
+        $softwareAcademy = $('<img src="view/img/SoftwareAcademy.jpg" class="img-responsive img-rounded" id="SoftwareAcademy" />');
 
     //Appending first row - Pick a category header
     $FirstRow.append($header);

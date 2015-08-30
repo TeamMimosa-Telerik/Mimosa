@@ -11,10 +11,10 @@ function thirdPage() {
         $currentCorrectAnswersContainer = $(' <div id="countsContainer" class="col-md-6">'),
         $playerNameAndPoints = $('<div id="playerAndPoints" class="col-md-3">');
 
-    $badgeHolder.append('<img class="blured" src="../img/badge1.png" />');
-    $badgeHolder.append('<img class="blured"src="../img/badge2.png" />');
-    $badgeHolder.append('<img class="blured" src="../img/badge3.png" />');
-    $badgeHolder.append('<img class="blured" src="../img/badge4.png" />');
+    $badgeHolder.append('<img class="blured" src="view/img/badge1.png" />');
+    $badgeHolder.append('<img class="blured"src="view/img/badge2.png" />');
+    $badgeHolder.append('<img class="blured" src="view/img/badge3.png" />');
+    $badgeHolder.append('<img class="blured" src="view/img/badge4.png" />');
     $currentCorrectAnswersContainer.append('<span id="answerText">Answers: </span>');
     $currentCorrectAnswersContainer.append('<span id="currentCorrectAnsweres" class="answeredCount">0</span>');
     $currentCorrectAnswersContainer.append('<span class="answeredCount">/</span>');
@@ -45,7 +45,7 @@ function thirdPage() {
     $categoryContainer.append($algoAcad);
     $categoryContainer.append($softwareAcad);
     $announcer.append('<a href="#/category">Select category</a>');
-    $announcer.append('<img id="arrow" src="../img/downArrow.png" />');
+    $announcer.append('<img id="arrow" src="view/img/downArrow.png" />');
     $asideBar.append($announcer);
     $asideBar.append($categoryContainer);
 

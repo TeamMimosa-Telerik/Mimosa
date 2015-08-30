@@ -12,7 +12,7 @@ function indexCreation() {
         $mastFoot = $('<div class="mastfoot"></div>'),
         $innerDiv = $('<div class="inner">'),
         $hThree = $('<h3 class="masthead-brand">')
-            .append($('<img src="../img/TeamMimosaHardWorkingNinja.jpg" id="masterNinja" alt="Hardworking ninja!" class="img-circle img-responsive"/>')),
+            .append($('<img src="view/img/TeamMimosaHardWorkingNinja.jpg" id="masterNinja" alt="Hardworking ninja!" class="img-circle img-responsive"/>')),
         $nav = $('<nav></nav>'),
         $ul = $('<ul class="nav masthead-nav"></ul>'),
         $logInLi = $('<li id="login"></li>'),
