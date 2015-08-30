@@ -1,18 +1,12 @@
 function eventRouter(){
     $('#play').click(function () {
-        if(Parse.User.current()!=null) {
-            $('#wrapper').hide();
-            $('#secondPageWrapper').show();
-        }
-        else
-        {
+        if(Parse.User.current() == null) {
             alert('You must be signed in to continue');
         }
     });
 
     $('#first-category-btn').click(function(){
-       $('#secondPageWrapper').hide();
-        $('#thirdPageWrapper').show();
+       
     });
 }
 

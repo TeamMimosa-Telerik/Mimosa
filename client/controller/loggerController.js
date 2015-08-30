@@ -30,6 +30,7 @@ function loggerEvents(){
             .then(function (user) {
                 alert('The user is set');
                 $('#signout').show();
+                console.log($('#signout'));
                 $('#login').hide();
                 $('#signup').hide();
                 $('#user-name').html('Welcome ' + Parse.User.current().get('username')).show();

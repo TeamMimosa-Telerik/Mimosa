@@ -11,6 +11,7 @@ var template = '    <div id="questionHeader">'+
         '<div id="4" class="percental"><span>{{optionFour}}</span></div>'+
 
     '</div>';
+    
  function handlebarsCreator(){
 
 

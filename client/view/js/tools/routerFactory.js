@@ -11,14 +11,20 @@ function RouterFactory(){
 	RouterFactory.prototype.init = function(){
 
 		console.log("init route RouterFactory");
+
+
 		$(window).on("hashchange",function(){
 
 			 var url = location.hash.slice(1) || '/';
-			console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
-			 console.log(location.hash.slice(1));
 			 routes.forEach(function(route){
 			 	if(route.url === url){
-			 		route.callback();
+
+			 		if(url != '/login' && Parse.User.current() == null) {
+			            alert('You must be signed in to continue');
+			        }else{
+			        	route.callback();
+			        }
+			 		
 			 	}
 			 });
 		});

@@ -32,23 +32,23 @@ function indexCreation() {
     //innerCover
     $innerCover.append($coverHeading)
         .append($('<p class="lead">Code&nbsp;&nbsp;Play&nbsp;&nbsp;Conquer</p>'))
-        .append($('<p class="lead"> <a href="#" id="play"class="btn btn-lg btn-default">Play</a> </p>'));
+        .append($('<p class="lead"> <a href="#/category" id="play"class="btn btn-lg btn-default">Play</a> </p>'));
     //innerCover END
 
     // mastHead
 
-    $signOutLi.append($('<a id="signout-trigger" href="#">Sign out</a>'));
+    $signOutLi.append($('<a id="signout-trigger">Sign out</a>'));
 
     $signUpForm.append($('<fieldset id="inputs-signup"> <input id="email" type="email" name="Email" placeholder="Your email address" required> <input id="password-signup" type="password" name="Password" placeholder="Password" required> <input id="confirm-password-signup" type="password" name="ConfirmPassword" placeholder="Confirm Password" required> <input id="username-signup" name="Username" placeholder="Choose Username" required> </fieldset>'))
         .append($('<fieldset id="actions-signup"> <input type="button" id="submit-signup" value="Sign up"> </fieldset>'));
     $signUpContent.append($signUpForm);
-    $signUpLi.append($('<a id="signup-trigger" href="#">Sign up <span>&#x25BC;</span></a>'))
+    $signUpLi.append($('<a id="signup-trigger">Sign up <span>&#x25BC;</span></a>'))
         .append($signUpContent);
 
     $logInForm.append($('<fieldset id="inputs-login"> <input id="username-login" name="Username" placeholder="Username" required> <input id="password-login" type="password" name="Password" placeholder="Password" required> </fieldset>'))
         .append($('<fieldset id="actions-login"> <input type="button" id="submit-login" value="Log in"> </fieldset>'));
     $logInContent.append($logInForm);
-    $logInLi.append($(' <a id="login-trigger" href="#">Log in <span>&#x25BC;</span></a>'))
+    $logInLi.append($(' <a id="login-trigger">Log in <span>&#x25BC;</span></a>'))
         .append($logInContent);
 
     $ul.append($logInLi).append($signUpLi).append($userNameLi).append($signOutLi);
