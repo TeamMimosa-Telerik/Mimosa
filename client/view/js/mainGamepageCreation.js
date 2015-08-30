@@ -44,7 +44,7 @@ function thirdPage() {
     $categoryContainer.append($schoolAcad);
     $categoryContainer.append($algoAcad);
     $categoryContainer.append($softwareAcad);
-    $announcer.append('<a href="#">Select category</a>');
+    $announcer.append('<a href="#/category">Select category</a>');
     $announcer.append('<img id="arrow" src="../img/downArrow.png" />');
     $asideBar.append($announcer);
     $asideBar.append($categoryContainer);

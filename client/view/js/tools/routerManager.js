@@ -8,15 +8,14 @@ import Device from './router.js'
 
 function routerManager() {
     //app.init();
-    console.log("RPOUTEER");
-    console.log(Factory);
+
     var routerFactory = new Factory.RouterFactory();
     console.log('first init');
 
     routerFactory.addRoute({
+        url: "/question",
+        callback: QP.init,
 
-        url: "/",
-        callback: QP.init
     });
 
     routerFactory.addRoute({
@@ -26,7 +25,8 @@ function routerManager() {
 
     routerFactory.addRoute({
         url: "/login",
-        callback: LP.init
+        callback: LP.init,
+        default:true
     });
 
     routerFactory.init();

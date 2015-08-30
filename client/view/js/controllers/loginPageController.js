@@ -1,5 +1,9 @@
 "use strict"
 import page1 from '../indexCreation.js';
+
+import events from '../../../controller/routerController.js';
+import toggleNavigation from '../events/toggleNavigation.js';
+import logger from '../../../controller/loggerController.js';
 function init() {
     console.log('Init index');
     // .js file for login page
@@ -8,6 +12,10 @@ function init() {
     $body.empty();
     var index = page1.indexCreation();
     $body.append(index);
+
+    events.eventRouter();
+    toggleNavigation.toggleNavigationEvents();
+    logger.loggerEvents();
 
 };
 

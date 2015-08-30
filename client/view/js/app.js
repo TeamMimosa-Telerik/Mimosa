@@ -4,15 +4,14 @@
  //import pageThird from './mainGamepageCreation.js';
 
 console.log("in app.js");
-alert('in app.js');
-import events from '../../controller/routerController.js';
-import toggleNavigation from './events/toggleNavigation.js';
-import logger from '../../controller/loggerController.js';
+// import events from '../../controller/routerController.js';
+// import toggleNavigation from './events/toggleNavigation.js';
+// import logger from '../../controller/loggerController.js';
 import gameEvent from './events/mainGamepageEvents.js';
 
 import router from './tools/routerManager.js';
 
- import handlebarsTemplate from './handlebarsCreator.js';
+// import handlebarsTemplate from './handlebarsCreator.js';
 
 
 export function init() {
@@ -29,11 +28,11 @@ export function init() {
    //thirdPage.hide();
     router.routerManager();
 
-    events.eventRouter();
-    toggleNavigation.toggleNavigationEvents();
-    logger.loggerEvents();
+    // events.eventRouter();
+    // toggleNavigation.toggleNavigationEvents();
+    // logger.loggerEvents();
     gameEvent.gameEvents();
-     handlebarsTemplate.handlebarsCreator();
+    // handlebarsTemplate.handlebarsCreator();
 
 }
  
