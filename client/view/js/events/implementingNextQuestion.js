@@ -95,7 +95,7 @@ function questionChanger() {
 
                     alert('Congratulations! You have unlocked a badge!');
 
-                    $('#questionHolder').html('<h1>Something interesting to pop up');
+                    $('#questionHolder').html('<h1>Something to pop up');
                     var looper;
                     for (looper = 1; looper <= $countOfUnlockedBadges; looper += 1) {
                         $('#badge' + looper).removeClass('blured');
