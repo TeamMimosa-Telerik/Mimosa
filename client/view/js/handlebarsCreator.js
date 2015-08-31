@@ -1,6 +1,6 @@
  import Handlebars from 'handlebars';
 
-var template = '    <div id="questionHeader">'+
+var template = '<div id="questionHeader">'+
         '<h2>{{questionText}}</h2>'+
     '</div>'+
     '<div id="questioBody">'+
