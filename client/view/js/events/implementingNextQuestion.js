@@ -4,7 +4,7 @@ import Handlebars from '../../lib/handlebars/handlebars.js';
 
 
 function questionChanger() {
-
+    sessionStorage.setItem('points',0);
     var $points = 0;
     var $countOfUnlockedBadges = 0;
 
@@ -53,8 +53,6 @@ function questionChanger() {
         console.log($content.html());
     }
 
-   
-
     implementNextQuestion(arrayQuestions[properties[$element]]);
 
     $('#questionHolder').on('click','.percental', function () {
@@ -65,6 +63,7 @@ function questionChanger() {
                        
         if ($id.toString() == arrayQuestions[properties[$element]].answer.toString()) {
             $points += arrayQuestions[properties[$element]].pointsOnGuessing;
+            sessionStorage.setItem('points',$points);
             $('#currentPlayerPoints').html($points);
             $element += 1;
 
@@ -98,7 +97,7 @@ function questionChanger() {
                    // Facebook with URL : https://mimosa.herokuapp.com/
                     window.fbAsyncInit = function() {
                         FB.init({
-                            appId      : '808130952634372',
+                            appId      : '1625525167728351',
                             xfbml      : true,
                             version    : 'v2.4'
                         });

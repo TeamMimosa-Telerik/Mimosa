@@ -1,14 +1,9 @@
-/**
- * Created by Aleksandra on 8/28/2015.
- */
-/*globals  require global*/
-
 import sign from '../model/signin.js';
 import signO from '../model/signout.js';
 import signU from '../model/signup.js';
+import scoreObj from '../model/score.js'
+function loggerEvents() {
 
-function loggerEvents(){
-    
     var currentUser = Parse.User.current();
     $('#signout').hide();
     if (currentUser) {
@@ -28,6 +23,7 @@ function loggerEvents(){
         var password = $('#password-login').val();
         sign.signIn(username, password)
             .then(function (user) {
+                sessionStorage.setItem('points', 0);
                 alert('The user is set');
                 $('#signout').show();
                 console.log($('#signout'));
@@ -66,7 +62,35 @@ function loggerEvents(){
 
     });
     $('#signout').click(function () {
-        signO.signOut();
+        var username = Parse.User.current().get('username');
+        var score = sessionStorage.getItem('points');
+        var pointsObject = scoreObj.createGameScoreObject();
+        console.log(username);
+        console.log(score);
+        pointsObject.init(username, score);
+        signO.signOut().then(function () {
+
+            pointsObject.save().then(function () {
+                alert('The score is saved');
+            });
+            sessionStorage.clear();
+            $('#signout').hide();
+            $('#login').show();
+            $('#signup').show();
+            $('#user-name').hide();
+            if ($('#signup-trigger').hasClass('active')) {
+                $('#signup-trigger').find('span').html('&#x25BC;');
+                $('#signup-trigger').next('#signup-content').slideToggle();
+                $('#signup-trigger').toggleClass('active');
+            }
+            if ($('#login-trigger').hasClass('active')) {
+                $('#login-trigger').next('#login-content').slideToggle();
+                $('#login-trigger').find('span').html('&#x25BC;');
+                $('#login-trigger').toggleClass('active');
+            }
+        }, function () {
+            alert("Error: " + error.code + " " + error.message);
+        })
 
     });
 
