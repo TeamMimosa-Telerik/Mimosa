@@ -68,7 +68,7 @@ function getQuestions() {
     $('#fourth-category-btn').click(function () {
 
         var $this = $(this);
-        $.ajax({url: "https://api-mimosa.herokuapp.com/softAcademyQuestions.json", success: function(result){
+        $.ajax({url: "https://api-mimosa.herokuapp.com/softAcademyQuestions", success: function(result){
             questions=result;
         }});
 
