@@ -21,7 +21,7 @@ function thirdPage() {
     $currentCorrectAnswersContainer.append('<span id="totalAnswersExpected" class="answeredCount">10</span>');
     $playerNameAndPoints.append('<a href="#" id="playerNameContainer">Player</a>');
     $playerNameAndPoints.append('<div id="separator"></div>');
-    $playerNameAndPoints.append('<span id="currentPlayerPoints">4000</span>');
+    $playerNameAndPoints.append('<span id="currentPlayerPoints">0</span>');
     $header.append($badgeHolder);
     $header.append($currentCorrectAnswersContainer);
     $header.append($playerNameAndPoints);
@@ -45,7 +45,6 @@ function thirdPage() {
     $categoryContainer.append($algoAcad);
     $categoryContainer.append($softwareAcad);
     $announcer.append('<a href="#/category">Select category</a>');
-    $announcer.append('<img id="arrow" src="../img/downArrow.png" />');
     $asideBar.append($announcer);
     $asideBar.append($categoryContainer);
 

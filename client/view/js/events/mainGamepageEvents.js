@@ -7,16 +7,6 @@
         $(this).css('background-color', 'rgb(' + 11 + ',' + 79 + ',' + 66 + ')');
     });
 
-    $('#announcer').click(function () {
-        $('#categoryContainer').slideToggle();
-        var $src = $('#arrow').attr('src');
-        if ($src === '../img/downArrow.png') {
-            $('#arrow').attr('src', '../img/upArrow.png');
-        }
-        else {
-            $('#arrow').attr('src', '../img/downArrow.png');
-        }
-    });
 
     $('.category').mouseenter(function () {
         $(this).css('background-color', 'lime');
@@ -33,5 +23,9 @@
         });
     });
 }
+
+$('#aside').mouseenter(function() {
+    alert('hi');
+});
 
 export default {gameEvents};
