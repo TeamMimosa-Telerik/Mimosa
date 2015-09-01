@@ -2,7 +2,7 @@
     margin: 0px;
     padding: 0px;
     background-image: url('../img/TelerikBackground.png');
-    background-repeat: repeat;
+    background-repeat:repeat;
 }
 
 img {
@@ -13,11 +13,13 @@ img {
 
 #header {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 75px;
+    font-size: 40px;
     font-weight: 500;
     color: #F8F8F8;
     margin-top: 23px;
     margin-bottom: 70px;
+	text-align:center;
+	display:inline-block;
 }
 
 #AlgoAcademy, #SoftwareAcademy {
@@ -31,13 +33,7 @@ img {
         margin: 10%;
     }
 
-    #SoftwareAcademy {
-        margin-top: -7%;
-    }
-
-    #AlgoAcademy {
-        margin-top: -5%;
-    }
+ 
 }
 
 /*Images should glow on mouse hover*/
@@ -51,6 +47,9 @@ img {
     border-style: inset;
     border-width: 5px;
     border-color: yellowgreen;
+}
+#secondPageWrapper { 
+padding:0;
 }
 
 #AlgoAcademy:hover {
