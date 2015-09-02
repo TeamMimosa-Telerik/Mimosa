@@ -68,11 +68,8 @@ function loggerEvents() {
         console.log(username);
         console.log(score);
         pointsObject.init(username, score);
-        signO.signOut().then(function () {
-
-            pointsObject.save().then(function () {
-                alert('The score is saved');
-            });
+        pointsObject.save().then(function () {
+            signO.signOut();
             localStorage.clear();
             $('#signout').hide();
             $('#login').show();
@@ -88,9 +85,11 @@ function loggerEvents() {
                 $('#login-trigger').find('span').html('&#x25BC;');
                 $('#login-trigger').toggleClass('active');
             }
-        }, function () {
-            alert("Error: " + error.code + " " + error.message);
-        })
+            alert('The score is saved');
+        }, function (error) {
+            alert(error.message);
+        });
+
 
     });
 
