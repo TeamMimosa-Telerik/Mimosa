@@ -1,7 +1,6 @@
 import manipulator from './manipulatingJSONObjectData.js';
 import Handlebars from '../../lib/handlebars/handlebars.js';
-
-
+import _ from '../../lib/underscore/underscore.js';
 
 function questionChanger() {
 
@@ -26,6 +25,7 @@ function questionChanger() {
 
 
     var $content = $('#questionHolder');
+    var $top5users = $('#top5');
 
     function makeTemplate() {
         var $htmlTaker = '<div id="questionHeader">' +
@@ -42,6 +42,46 @@ function questionChanger() {
         var $workingHTML = Handlebars.compile($htmlTaker);
         return $workingHTML;
     }
+
+    function top5UsersTemplate() {
+        var template = '<ul>Top 5 Users' +
+            '{{#each people}}' +
+            '<li>{{this.name}}-{{this.score}}</li>' +
+            '{{/each}}'
+        '</ul>';
+        return Handlebars.compile(template);
+    }
+
+    var GameScore = Parse.Object.extend("GameScore");
+    var query = new Parse.Query(GameScore);
+    query.ascending("score");
+
+    var users = [];
+    var top5UsersArray = {
+        people: []
+    }
+    query.find().then(function (results) {
+            var queryResults = results.slice();
+
+            for (var i = 0; i < results.length; i++) {
+                users.push({name: queryResults[i].get('username'), score: queryResults[i].get('score')|0});
+            }
+
+            var top5UsersHTML = top5UsersTemplate();
+            var sortedUsers = _.sortBy(users, 'score').reverse();
+
+            var nonDuplidatedUsers = _.uniq(sortedUsers, 'name');
+            console.log(nonDuplidatedUsers);
+            top5UsersArray.people= _.first(nonDuplidatedUsers,5);
+            console.log(top5UsersArray.people);
+            $top5users.html(top5UsersHTML(top5UsersArray));
+        }
+    )
+
+    //for (var i = 0; i < 5; i++) {
+    //    top5UsersArray.people.push({name: top5Results[i].get('username'), score: top5Results[i].get('score')});
+    //}
+
 
     var $workingHTML = makeTemplate();
 
@@ -100,7 +140,8 @@ function questionChanger() {
                         {
                             method: 'share',
                             href: 'https://mimosas.herokuapp.com/'
-                        }, function(response){});
+                        }, function (response) {
+                        });
 
                     //Facebook END
 

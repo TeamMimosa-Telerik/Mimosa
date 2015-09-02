@@ -30,24 +30,25 @@ function thirdPage() {
     var $section = $('<section class="row">'),
         $asideBar = $('<div id="aside" class="col-md-3">'),
         $announcer = $('<div id="announcer">'),
-        $categoryContainer = $('<div id="categoryContainer">'),
+      // $categoryContainer = $('<div id="categoryContainer">'),
+        $top5users = $('<div id="top5">'),
         $kidsAcad = $('<div class="category">'),
         $schoolAcad = $('<div class="category">'),
         $algoAcad = $('<div class="category">'),
         $softwareAcad = $('<div class="category">');
 
-    $kidsAcad.append('<a href="#">Kids Academy</a>');
-    $schoolAcad.append('<a href="#">School Academy</a>');
-    $algoAcad.append('<a href="#">Algo Academy</a>');
-    $softwareAcad.append('<a href="#">Software Academy</a>');
-    $categoryContainer.append($kidsAcad);
-    $categoryContainer.append($schoolAcad);
-    $categoryContainer.append($algoAcad);
-    $categoryContainer.append($softwareAcad);
+   ////$kidsAcad.append('<a href="#">Kids Academy</a>');
+   //$schoolAcad.append('<a href="#">School Academy</a>');
+   //$algoAcad.append('<a href="#">Algo Academy</a>');
+   //$softwareAcad.append('<a href="#">Software Academy</a>');
+   //$categoryContainer.append($kidsAcad);
+   //$categoryContainer.append($schoolAcad);
+   //$categoryContainer.append($algoAcad);
+   //$categoryContainer.append($softwareAcad);
     $announcer.append('<a href="#/category">Select category</a>');
     $asideBar.append($announcer);
-    $asideBar.append($categoryContainer);
-
+    //$asideBar.append($categoryContainer);
+    $asideBar.append($top5users);
     $section.append('<div id="questionHolder" class="col-md-9">');
     $section.append($asideBar);
     thirdPageWrapper.append($section);
