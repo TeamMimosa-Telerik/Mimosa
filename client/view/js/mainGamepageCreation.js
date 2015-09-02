@@ -1,6 +1,6 @@
 import 'jquery';
 //import 'bootstrap';
-
+import SignOut from '../../model/signout.js';
 
 function thirdPage() {
 
@@ -30,22 +30,23 @@ function thirdPage() {
     var $section = $('<section class="row">'),
         $asideBar = $('<div id="aside" class="col-md-3">'),
         $announcer = $('<div id="announcer">'),
-      // $categoryContainer = $('<div id="categoryContainer">'),
+    // $categoryContainer = $('<div id="categoryContainer">'),
         $top5users = $('<div id="top5">'),
         $kidsAcad = $('<div class="category">'),
         $schoolAcad = $('<div class="category">'),
         $algoAcad = $('<div class="category">'),
-        $softwareAcad = $('<div class="category">');
-
-   ////$kidsAcad.append('<a href="#">Kids Academy</a>');
-   //$schoolAcad.append('<a href="#">School Academy</a>');
-   //$algoAcad.append('<a href="#">Algo Academy</a>');
-   //$softwareAcad.append('<a href="#">Software Academy</a>');
-   //$categoryContainer.append($kidsAcad);
-   //$categoryContainer.append($schoolAcad);
-   //$categoryContainer.append($algoAcad);
-   //$categoryContainer.append($softwareAcad);
+        $softwareAcad = $('<div class="category">'),
+    $logoutLink = $('<a id="log-out-third-page" href="#/login">Log out</a>');
+    ////$kidsAcad.append('<a href="#">Kids Academy</a>');
+    //$schoolAcad.append('<a href="#">School Academy</a>');
+    //$algoAcad.append('<a href="#">Algo Academy</a>');
+    //$softwareAcad.append('<a href="#">Software Academy</a>');
+    //$categoryContainer.append($kidsAcad);
+    //$categoryContainer.append($schoolAcad);
+    //$categoryContainer.append($algoAcad);
+    //$categoryContainer.append($softwareAcad);
     $announcer.append('<a href="#/category">Select category</a>');
+    $asideBar.append($logoutLink);
     $asideBar.append($announcer);
     //$asideBar.append($categoryContainer);
     $asideBar.append($top5users);
@@ -59,6 +60,7 @@ function thirdPage() {
 
     $innerFooter.append(' <h2>Property of Telerik Academy. Designed by Team Mimosa</h2>');
     $footer.append($innerFooter);
+
     return thirdPageWrapper;
 }
 

@@ -1,4 +1,5 @@
-﻿function gameEvents(){
+﻿import SignOut from '../../../model/signout.js';
+function gameEvents(){
 
     $('#announcer').mouseenter(function () {
         $(this).css('background-color', 'orange');
@@ -22,10 +23,19 @@
             $child.eq(item).css('color', 'lime');
         });
     });
+    $('#log-out-third-page').click(function(){
+        alert('pred sign out');
+        SignOut.signOut().then(function(){
+            console.log("goran sign out");
+           // window.location.assign(location.hostname+'/login');
+        });
+
+    });
 }
 
 $('#aside').mouseenter(function() {
     alert('hi');
 });
+
 
 export default {gameEvents};
