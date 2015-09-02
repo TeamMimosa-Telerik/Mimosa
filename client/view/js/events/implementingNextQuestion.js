@@ -22,21 +22,22 @@ function questionChanger() {
 
     var arrayQuestions = questionManipulation();
 
-    console.log("ARRAY QUESTIONS");
-    console.log(arrayQuestions);
+    //console.log("ARRAY QUESTIONS");
+    //console.log(arrayQuestions);
 
     //drago use this variable
     var type = json.categoryPageIIFE.getTypeCategory();
-    console.log("TYPEEEEEE");
-    console.log(type);
+    //console.log("TYPEEEEEE");
+    //console.log(type);
 
     var properties = [];
     for (var prop in arrayQuestions) {
         properties.push(prop);
+        console.log(prop); //TUK
     }
 
-    console.log("PROPERTIES QUESTIONS");
-    console.log(properties);
+    //console.log("PROPERTIES QUESTIONS");
+    //console.log(properties);
 
     var $element = 0;
     $('#totalAnswersExpected').text(properties.length);
@@ -91,7 +92,7 @@ function questionChanger() {
             var nonDuplidatedUsers = _.uniq(sortedUsers, 'name');
             console.log(nonDuplidatedUsers);
             top5UsersArray.people= _.first(nonDuplidatedUsers,5);
-            console.log(top5UsersArray.people);
+            //console.log(top5UsersArray.people);
             $top5users.html(top5UsersHTML(top5UsersArray));
         }
     )
@@ -107,8 +108,8 @@ function questionChanger() {
 
         $content.html($workingHTML(''));
         $content.html($workingHTML(objectToImplement));
-        console.log("CONTENT");
-        console.log($content.html());
+        //console.log("CONTENT");
+        //console.log($content.html());
     }
 
     implementNextQuestion(arrayQuestions[properties[$element]]);
@@ -118,8 +119,8 @@ function questionChanger() {
 
         var $this = $(this);
         var $id = $this.attr('id');
-        console.log('aaaaaaaaaaaaaaaaabbbbbbbbbbbbb');
-        console.log($id);
+        //console.log('aaaaaaaaaaaaaaaaabbbbbbbbbbbbb');
+        //console.log($id);
         if ($id.toString() == arrayQuestions[properties[$element]].answer.toString()) {
             $points += arrayQuestions[properties[$element]].pointsOnGuessing;
             localStorage.setItem('points', $points);
@@ -127,9 +128,9 @@ function questionChanger() {
             $element += 1;
 
             //WHAT IS THIS
-            $('#currentCorrectAnsweres').text($element);
+            $('#currentCorrectAnsweres').text($element);   //POINTS REFRESH
 
-            if ($element < properties.length) {
+            if ($element < properties.length) {                      //IF THE LAST QUESTION OF THIS CATEGORY IS NOT!!! ANSWERED
                 implementNextQuestion(arrayQuestions[properties[$element]]);
 
                 // implementNextQuestion(arrayQuestions[properties[$element]]);
@@ -145,14 +146,16 @@ function questionChanger() {
                 //     // $('#4').find('span').text(arrayQuestions[properties[$element]].optionFour);
 
                 // }
-            } else {
+            } else {                  //LAST QUESTION REACHED
                 //UNLOCK BADGE
                 if ($countOfUnlockedBadges < 4) {
 
                     $countOfUnlockedBadges += 1;
 
                     alert('Congratulations! You have unlocked a badge!');
-
+ 
+                    $('#' + type).removeClass('blured');
+                        
                     // Facebook with URL : https://mimosa.herokuapp.com/
                     FB.ui(
                         {
@@ -164,11 +167,11 @@ function questionChanger() {
                     //Facebook END
 
                     // $('#questionHolder').html('<h1>Something to pop up');
-                    var looper;
-                    for (looper = 1; looper <= $countOfUnlockedBadges; looper += 1) {
-                        $('#badge' + looper).removeClass('blured');
+                    //var looper;
+                    //for (looper = 1; looper <= $countOfUnlockedBadges; looper += 1) {
+                    //    $('#badge' + looper).removeClass('blured');
 
-                    }
+                    //}
                 }
             }
             // else {
