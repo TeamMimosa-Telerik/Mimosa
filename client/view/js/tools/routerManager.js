@@ -20,7 +20,7 @@ function routerManager() {
 
     routerFactory.addRoute({
         url: "/category",
-        callback: CP.init
+        callback: CP.categoryPageIIFE.init
     });
 
     routerFactory.addRoute({
