@@ -4,6 +4,7 @@ import page2 from '../secondPageCreation.js';
 
 //TODO: REMOVE GLOBAL VARIABLES
 var categoryQuestions;
+var typeCategory;
 
 var categoryPageIIFE = (function(){
 
@@ -21,6 +22,7 @@ var categoryPageIIFE = (function(){
 	        $.getJSON("https://api-mimosa.herokuapp.com/kidsAcademyQuestions")
 	        		.done(function(result) {
 				          categoryQuestions = result;
+				          typeCategory = 'kids';
 				          window.location.assign("#/question");
 				        });
 
@@ -31,6 +33,7 @@ var categoryPageIIFE = (function(){
 	        $.getJSON("https://api-mimosa.herokuapp.com/schoolAcademyQuestions")
 	        		.done(function(result) {
 				          categoryQuestions = result;
+				          typeCategory = 'school';
 				          window.location.assign("#/question");
 				        });
 
@@ -40,6 +43,7 @@ var categoryPageIIFE = (function(){
 	        $.getJSON("https://api-mimosa.herokuapp.com/algoAcademyQuestions")
 	        	    .done(function(result) {
 				          categoryQuestions = result;
+				          typeCategory = 'algo';
 				          window.location.assign("#/question");
 				        });
 	    });
@@ -48,6 +52,7 @@ var categoryPageIIFE = (function(){
 	        $.getJSON("https://api-mimosa.herokuapp.com/softAcademyQuestions")
 	        		.done(function(result) {
 				          categoryQuestions = result;
+				          typeCategory = 'software';
 				          window.location.assign("#/question");
 				        }); 
 	    });
@@ -58,9 +63,13 @@ var categoryPageIIFE = (function(){
 	    return categoryQuestions;
 	}
 
+	function getTypeCategory(){
+	    return typeCategory;
+	}
 	return {
 		init:init,
-		getQuestions:getQuestions
+		getQuestions:getQuestions,
+		getTypeCategory:getTypeCategory
 	};
 
 }());

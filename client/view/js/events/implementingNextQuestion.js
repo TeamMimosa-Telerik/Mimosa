@@ -1,16 +1,34 @@
-import manipulator from './manipulatingJSONObjectData.js';
+// import manipulator from './manipulatingJSONObjectData.js';
 import Handlebars from '../../lib/handlebars/handlebars.js';
 import _ from '../../lib/underscore/underscore.js';
+
+
+import json from '../controllers/categoryPageController.js';
+
+
+function questionManipulation() {
+    var i=0;
+   // var arrayQuestions = questions.dataHolder()();
+    var arrayQuestions = json.categoryPageIIFE.getQuestions();
+    console.log('JSSOOOOOn');
+    console.log(arrayQuestions);
+    return arrayQuestions;
+}
 
 function questionChanger() {
 
     var $points = 0;
     var $countOfUnlockedBadges = 0;
 
-    var arrayQuestions = manipulator.questionManipulation();
+    var arrayQuestions = questionManipulation();
 
     console.log("ARRAY QUESTIONS");
     console.log(arrayQuestions);
+
+    //drago use this variable
+    var type = json.categoryPageIIFE.getTypeCategory();
+    console.log("TYPEEEEEE");
+    console.log(type);
 
     var properties = [];
     for (var prop in arrayQuestions) {
