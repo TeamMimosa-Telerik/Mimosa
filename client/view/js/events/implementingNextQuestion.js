@@ -4,7 +4,7 @@ import Handlebars from '../../lib/handlebars/handlebars.js';
 
 
 function questionChanger() {
-    sessionStorage.setItem('points', 0);
+
     var $points = 0;
     var $countOfUnlockedBadges = 0;
 
@@ -64,7 +64,7 @@ function questionChanger() {
         console.log($id);
         if ($id.toString() == arrayQuestions[properties[$element]].answer.toString()) {
             $points += arrayQuestions[properties[$element]].pointsOnGuessing;
-            sessionStorage.setItem('points', $points);
+            localStorage.setItem('points', $points);
             $('#currentPlayerPoints').html($points);
             $element += 1;
 

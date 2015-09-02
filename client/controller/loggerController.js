@@ -23,7 +23,7 @@ function loggerEvents() {
         var password = $('#password-login').val();
         sign.signIn(username, password)
             .then(function (user) {
-                sessionStorage.setItem('points', 0);
+                localStorage.setItem('points', 0);
                 alert('The user is set');
                 $('#signout').show();
                 console.log($('#signout'));
@@ -63,7 +63,7 @@ function loggerEvents() {
     });
     $('#signout').click(function () {
         var username = Parse.User.current().get('username');
-        var score = sessionStorage.getItem('points');
+        var score = localStorage.getItem('points');
         var pointsObject = scoreObj.createGameScoreObject();
         console.log(username);
         console.log(score);
@@ -73,7 +73,7 @@ function loggerEvents() {
             pointsObject.save().then(function () {
                 alert('The score is saved');
             });
-            sessionStorage.clear();
+            localStorage.clear();
             $('#signout').hide();
             $('#login').show();
             $('#signup').show();
