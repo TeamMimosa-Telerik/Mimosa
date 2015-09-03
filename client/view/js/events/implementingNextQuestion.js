@@ -16,6 +16,14 @@ function questionManipulation() {
 }
 
 function questionChanger() {
+    if (localStorage.getItem("points") === null) {
+      localStorage.setItem("points");
+    }
+
+    if (localStorage.getItem("badge") === null) {
+        var badges = { 'kids': false, 'algo': false, 'school': false, 'software':false };
+        localStorage.setItem('badge', JSON.stringify(badges));
+    }
 
     var $points =  +localStorage.getItem("points");
      $('#currentPlayerPoints').html($points);
