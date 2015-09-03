@@ -171,6 +171,8 @@ function questionChanger() {
                     $('#' + type).removeClass('blured');
                     category.currentQuestion = 0;
                     localStorage.setItem("category", JSON.stringify(category));
+
+                    
                     // Facebook with URL : https://mimosa.herokuapp.com/
                     FB.ui(
                         {

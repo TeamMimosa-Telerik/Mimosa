@@ -20,14 +20,14 @@ var categoryPageIIFE = (function(){
 			localStorage.setItem("category", JSON.stringify({'type': "", 'currentQuestion': 0}));
 		}
 
-		 if (localStorage.getItem("badge") === null) {
+		if (localStorage.getItem("badge") === null) {
 	        var badges = { 'kids': false, 'algo': false, 'school': false, 'software':false };
 	        localStorage.setItem('badge', JSON.stringify(badges));
 	    }
 
 		var retrievedObject = localStorage.getItem('category');
     
-    	var badges = JSON.parse(localStorage.getItem('badge'));
+    	var badgesObject = JSON.parse(localStorage.getItem('badge'));
 
 
 	    var category = JSON.parse(retrievedObject);
@@ -47,7 +47,7 @@ var categoryPageIIFE = (function(){
 
 	    
 
-	   	if (badges.kids) {
+	   	if (badgesObject.kids) {
 	   		$('#second-category-btn').removeClass('blured');
 		    $('#second-category-btn').click(function () {
 		    	
@@ -65,7 +65,7 @@ var categoryPageIIFE = (function(){
 		    });
 		}
 
-		if (badges.school) {
+		if (badgesObject.school) {
 			$('#third-category-btn').removeClass('blured')
 		    $('#third-category-btn').click(function () {
 		    	category.type= "algo";
@@ -81,7 +81,7 @@ var categoryPageIIFE = (function(){
 		    });
 		}
 
-		if (badges.algo) {
+		if (badgesObject.algo) {
 			$('#fourth-category-btn').removeClass('blured')
 		    $('#fourth-category-btn').click(function () {
 		    	

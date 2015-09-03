@@ -8,7 +8,7 @@ function secondPageCreation() {
         $FirstRow = $('<div class="row">'),
         $header = $('<div class="col-xs-6 col-xs-offset-3" id="header">Pick a category</div>'),
         $secondRow = $('<div class="row">'),
-        $firstCategory = $('<a id="first-category-btn" class="col-xs-3 col-xs-offset-2 blured">'),
+        $firstCategory = $('<a id="first-category-btn" class="col-xs-3 col-xs-offset-2">'),
         $kidsAcademy = $('<img src="../img/kids.jpg" class="img-responsive img-rounded" id="KidsAcademy" />'),
         $secondCategory = $('<a id="second-category-btn"  class="col-xs-3 col-xs-offset-2 blured">'),
         $schoolAcademy = $('<img src="../img/school.jpg" class="img-responsive img-rounded" id="SchoolAcademy" />'),
