@@ -1,6 +1,6 @@
 import 'jquery';
 //import 'bootstrap';
-import SignOut from '../../model/signout.js';
+import SignOut from '../../../model/signout.js';
 
 function thirdPage() {
 
@@ -11,10 +11,10 @@ function thirdPage() {
         $currentCorrectAnswersContainer = $(' <div id="countsContainer" class="col-md-6">'),
         $playerNameAndPoints = $('<div id="playerAndPoints" class="col-md-3">');
 
-    $badgeHolder.append('<img id="kids" class="blured" src="../img/kids.jpg" />');
-    $badgeHolder.append('<img id="school" class="blured" src="../img/school.jpg" />');
-    $badgeHolder.append('<img id="algo" class="blured" src="../img/algo.jpg" />');
-    $badgeHolder.append('<img id="software" class="blured" src="../img/software.jpg" />');
+    $badgeHolder.append('<img id="kids" class="blured" src="../../img/kids.jpg" />');
+    $badgeHolder.append('<img id="school" class="blured" src="../../img/school.jpg" />');
+    $badgeHolder.append('<img id="algo" class="blured" src="../../img/algo.jpg" />');
+    $badgeHolder.append('<img id="software" class="blured" src="../../img/software.jpg" />');
     $currentCorrectAnswersContainer.append('<span id="answerText">Answers: </span>');
     $currentCorrectAnswersContainer.append('<span id="currentCorrectAnsweres" class="answeredCount">0</span>');
     $currentCorrectAnswersContainer.append('<span class="answeredCount">/</span>');
