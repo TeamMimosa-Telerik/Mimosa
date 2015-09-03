@@ -40,6 +40,11 @@ img {
     }
 }
 
+.blured {
+    opacity: 0.5;
+    border:1px solid transparent;
+}
+
 /*Images should glow on mouse hover*/
 #KidsAcademy:hover {
     border-style: inset;
