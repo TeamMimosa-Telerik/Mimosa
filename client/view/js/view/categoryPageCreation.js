@@ -1,4 +1,4 @@
-﻿import 'jquery';
+﻿import '../../lib/jquery/dist/jquery.js';
 //import 'bootstrap';
 
 function secondPageCreation() {

@@ -1,15 +1,9 @@
-// import manipulator from './manipulatingJSONObjectData.js';
 import Handlebars from '../../lib/handlebars/handlebars.js';
 import _ from '../../lib/underscore/underscore.js';
-
-
-import json from '../controllers/categoryPageController.js';
-
+import JSONObject from '../controllers/categoryPageController.js';
 
 function questionManipulation() {
-    var arrayQuestions = json.categoryPageIIFE.getQuestions();
-    console.log('JSSOOOOOn');
-    console.log(arrayQuestions);
+    var arrayQuestions = JSONObject.categoryPageIIFE.getQuestions();
     return arrayQuestions;
 }
 
@@ -25,6 +19,7 @@ function questionChanger() {
 
     var $points =  +localStorage.getItem("points");
      $('#currentPlayerPoints').html($points);
+
     var $countOfUnlockedBadges = 0;
 
     var arrayQuestions = questionManipulation();
@@ -126,11 +121,6 @@ function questionChanger() {
         }
     )
 
-    //for (var i = 0; i < 5; i++) {
-    //    top5UsersArray.people.push({name: top5Results[i].get('username'), score: top5Results[i].get('score')});
-    //}
-
-
     var $workingHTML = makeTemplate();
 
     function implementNextQuestion(objectToImplement) {
@@ -164,19 +154,7 @@ function questionChanger() {
             if ($element < properties.length) {                  //IF THE LAST QUESTION OF THIS CATEGORY IS NOT!!! ANSWERED
                 implementNextQuestion(arrayQuestions[properties[$element]]);
 
-                // implementNextQuestion(arrayQuestions[properties[$element]]);
-                // if (properties[$element] < arrayQuestions.length) {
 
-                // if ($element < properties.length){
-
-                //     console.log("EEEEEEEEEEEEEE")
-                //     // $('#questionText').text(arrayQuestions[properties[$element]].questionText);
-                //     // $('#1').find('span').text(arrayQuestions[properties[$element]].optionOne);
-                //     // $('#2').find('span').text(arrayQuestions[properties[$element]].optionTwo);
-                //     // $('#3').find('span').text(arrayQuestions[properties[$element]].optionThree);
-                //     // $('#4').find('span').text(arrayQuestions[properties[$element]].optionFour);
-
-                // }
             } else {                  //LAST QUESTION REACHED
                 //UNLOCK BADGE
                 if ($countOfUnlockedBadges < 4) {
@@ -203,30 +181,9 @@ function questionChanger() {
 
                     //Facebook END
 
-                    // $('#questionHolder').html('<h1>Something to pop up');
-                    //var looper;
-                    //for (looper = 1; looper <= $countOfUnlockedBadges; looper += 1) {
-                    //    $('#badge' + looper).removeClass('blured');
 
-                    //}
                 }
             }
-            // else {
-            //             //UNLOCK BADGE
-            //     if ($countOfUnlockedBadges < 4) {
-
-            //         $countOfUnlockedBadges += 1;
-
-            //         alert('Congratulations! You have unlocked a badge!');
-
-            //         $('#questionHolder').html('<h1>Something interesting to pop up');
-            //         var looper;
-            //         for (looper = 1; looper <= $countOfUnlockedBadges; looper += 1) {
-            //             $('#badge' + looper).removeClass('blured');
-
-            //         }
-            //     }
-            //else if all badges have already been unlock...dont do anything
         }
     });
 }

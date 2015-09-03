@@ -1,6 +1,6 @@
-import 'jquery';
+import '../../lib/jquery/dist/jquery.js';
 //import 'bootstrap';
-import SignOut from '../../model/signout.js';
+import SignOut from '../../../model/signout.js';
 
 function thirdPage() {
 

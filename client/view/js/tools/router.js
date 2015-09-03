@@ -1,6 +1,13 @@
-function Router(url, callback){
-	this.url = url;
-	this.callback = callback();
+function Router() {
+
 }
 
-export default {Router}
+Router.prototype.init = function(url, callback){
+    this.url = url;
+    this.callback = callback;
+};
+
+function getRouter() {
+    return new Router();
+}
+export default {getRouter}
