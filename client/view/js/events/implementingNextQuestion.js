@@ -17,7 +17,8 @@ function questionManipulation() {
 
 function questionChanger() {
 
-    var $points = 0;
+    var $points =  +localStorage.getItem("points");
+     $('#currentPlayerPoints').html($points);
     var $countOfUnlockedBadges = 0;
 
     var arrayQuestions = questionManipulation();
@@ -38,6 +39,28 @@ function questionChanger() {
 
     //console.log("PROPERTIES QUESTIONS");
     //console.log(properties);
+
+    var retrievedObject = localStorage.getItem('badge');
+    
+    var badges = JSON.parse(retrievedObject);
+   
+
+
+    if (badges['kids']) {
+         $('#' + 'kids').removeClass('blured');
+    }
+
+    if (badges['algo']) {
+         $('#' + 'algo').removeClass('blured');
+    }
+
+    if (badges['school']) {
+         $('#' + 'school').removeClass('blured');
+    }
+
+    if (badges['software']) {
+         $('#' + 'software').removeClass('blured');
+    }
 
     var $element = 0;
     $('#totalAnswersExpected').text(properties.length);
@@ -124,7 +147,7 @@ function questionChanger() {
         if ($id.toString() == arrayQuestions[properties[$element]].answer.toString()) {
             $points += arrayQuestions[properties[$element]].pointsOnGuessing;
             localStorage.setItem('points', $points);
-            $('#currentPlayerPoints').html($points);
+            $('#currentPlayerPoints').html(localStorage.getItem("points"));
             $element += 1;
 
             //WHAT IS THIS
@@ -153,9 +176,14 @@ function questionChanger() {
                     $countOfUnlockedBadges += 1;
 
                     alert('Congratulations! You have unlocked a badge!');
- 
-                    $('#' + type).removeClass('blured');
-                        
+
+                    badges[type] = true;
+
+                    localStorage.setItem("badge", JSON.stringify(badges));
+                    
+                     $('#' + type).removeClass('blured');
+
+                    
                     // Facebook with URL : https://mimosa.herokuapp.com/
                     FB.ui(
                         {

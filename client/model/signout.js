@@ -9,6 +9,8 @@ function signOut() {
     //console.log(username);
     //console.log(score);
     //pointsObject.init(username,score);
+
+    localStorage.removeItem("badge");
     Parse.User.logOut()
         .then(function (user) {
             promise.resolve(user);

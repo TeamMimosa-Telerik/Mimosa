@@ -27,6 +27,8 @@ export function init() {
    //$body.append(thirdPage);
    //thirdPage.hide();
     router.routerManager();
+    var badges = { 'kids': false, 'algo': false, 'school': false, 'software':false };
+    localStorage.setItem('badge', JSON.stringify(badges));
 
     // events.eventRouter();
     // toggleNavigation.toggleNavigationEvents();
