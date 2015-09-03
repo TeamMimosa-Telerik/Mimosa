@@ -46,10 +46,10 @@
             },
 			"question5": {
                 "questionText": "Purpose of \"finally\" block?",
-                "optionOne": "The code will always execute",
-                "optionTwo": "The prevents the program from stopping",
-                "optionThree": "It provides a hidden section of code",
-                "optionFour": "It allows final users to see the errors",
+                "optionOne": "Code will always execute",
+                "optionTwo": "Prevents the program stop",
+                "optionThree": "It provides hidden code",
+                "optionFour": "Allows users to see errors",
                 "answer": 1,
                 "pointsOnGuessing": 1200
             },
@@ -57,7 +57,7 @@
                 "questionText": "What does the .NET CLR do for the program?",
                 "optionOne": "Slows it down a bit",
                 "optionTwo": "Garbage disposal",
-                "optionThree": "Makes the programmers job easier",
+                "optionThree": "Makes the job easier",
                 "optionFour": "All of them",
                 "answer": 4,
                 "pointsOnGuessing": 1300
@@ -65,9 +65,9 @@
 			"question7": {
                 "questionText": "What purpose does Regex serve?",
                 "optionOne": "Data validation",
-                "optionTwo": "Provides the whole stack trace",
+                "optionTwo": "Provides entire stack trace",
                 "optionThree": "Data encapsulation",
-                "optionFour": "Prevents an object inheritance",
+                "optionFour": "Prevents object inheritance",
                 "answer": 1,
                 "pointsOnGuessing": 1400
             }			

@@ -29,8 +29,8 @@
             "question3": {
                 "questionText": "Why is StringBuilder faster than normal string concatenation ?",
                 "optionOne": "It is the same",
-                "optionTwo": "StringBuilder is modified to be faster",
-                "optionThree": "Stringbuilder is not immutable",
+                "optionTwo": "StringBuilder is made  faster",
+                "optionThree": "Stringbuilder isn\'t immutable",
                 "optionFour": "none of these",
                 "answer": 3,
                 "pointsOnGuessing": 200
@@ -55,8 +55,8 @@
             },  			
 			"question6": {
                 "questionText": "What do media queries do ?",
-                "optionOne": "Highlights error sections in the code",
-                "optionTwo": "Differs elements in other resolutions",
+                "optionOne": "Highlights error sections in code",
+                "optionTwo": "Differs elements in resolutions",
                 "optionThree": "Makes IE7 compatible with CSS3",
                 "optionFour" : "None of the above",
                 "answer": 2,
@@ -66,13 +66,13 @@
                 "questionText": "What are pollyfillers used for?", 
                 "optionOne": "Making JS run faster in browsers",
                 "optionTwo": "Are not used today-depricated",
-                "optionThree": "Makes media queries work in older browsers",
-                "optionFour": "Hides all sensitive data from the url",
+                "optionThree": "Queries work in older browsers",
+                "optionFour": "Hides sensitive data from url",
                 "answer": 3,
                 "pointsOnGuessing": 570
             },   
 			"question8": {
-                "questionText": "What will the following C# code return \"int[] k = new int[2];  Console.Write(k[3]); \" ?",
+                "questionText": "What will the following C# code return \"int[] k = new int[2]; Console.Write(k[3]); \" ?",
                 "optionOne": "IndexOutOfRangeException",
                 "optionTwo": "FormatException",
                 "optionThree": "NullReferenceException",

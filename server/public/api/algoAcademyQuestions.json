@@ -1,6 +1,6 @@
 {
 			"question0": {
-                "questionText" : "What will the following code return:\"typeof(NaN)\"?",
+                "questionText" : "Pick the answer of:\"typeof(NaN)\"?",
                 "optionOne": " NaN",
                 "optionTwo": "number",
                 "optionThree": "undefined",
@@ -13,7 +13,7 @@
                 "optionOne": " var a = 4",
                 "optionTwo": "int a = 4",
                 "optionThree": "int a = 4.5f",
-                "optionFour": "p = function(){return 5;}",
+                "optionFour": "p= a(){return 5;}",
                 "answer": 2,
                 "pointsOnGuessing": 100
             },
@@ -28,9 +28,9 @@
             },
             "question3": {
                 "questionText": "Why is it important to know Quality coding?",
-                "optionOne": "Make the code readable",
-                "optionTwo": "Make the code easy to refactor",
-                "optionThree": "Both",
+                "optionOne": "Make code readable",
+                "optionTwo": "Make code easy to refactor",
+                "optionThree": "First two options",
                 "optionFour": "It is quite useless",
                 "answer": 3,
                 "pointsOnGuessing": 200
@@ -55,19 +55,19 @@
             },
 			"question6": {
                 "questionText": "Why is C++ a better option for developing big games,compared to C#?",
-                "optionOne": "C# is slower due to bad data transitions",
+                "optionOne": "C# has bad pluggins",
                 "optionTwo": "C#is slower due to CLR",
-                "optionThree": "C++ is not the better option",
-                "optionFour": "C++ game developers are better paid",
+                "optionThree": "C++ isn't a better option",
+                "optionFour": "C++ devs are better paid",
                 "answer": 2,
                 "pointsOnGuessing": 300
             },
 			"question7": {
                 "questionText": "Can multiple classes be inherited in C#?",
-                "optionOne": "Only multiple interface inheritance",
-                "optionTwo": "Yes,an unlimited number of classes",
-                "optionThree": "You can inherit up to 3 classes",
-                "optionFour": "C# does not work with objects",
+                "optionOne": "Only multiple interface ",
+                "optionTwo": "Yes,an unlimited number",
+                "optionThree": "You can inherit up to 3",
+                "optionFour": "C# does not use classes",
                 "answer": 1,
                 "pointsOnGuessing": 360
             }
