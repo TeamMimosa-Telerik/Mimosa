@@ -1,0 +1,14 @@
+{
+  "name": "tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "first-page-tests.js",
+  "scripts": {
+    "test": "mocha -R spec tests --compilers js:babel/register"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^5.8.23"
+  }
+}

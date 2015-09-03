@@ -1,0 +1,26 @@
+{
+  "name": "tests",
+  "version": "1.0.0",
+  "authors": [
+    "hris21 <handreev000@gmail.com>"
+  ],
+  "description": "Packages for unit testing.",
+  "main": "testIndex.html",
+  "moduleType": [
+    "es6",
+    "node"
+  ],
+  "license": "MIT",
+  "homepage": "-",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "chai": "~3.2.0",
+    "mocha": "~2.3.0"
+  }
+}
