@@ -56,7 +56,7 @@ describe('#Software and Algo categories tests', function () {
  
         expect(children).to.have.length(2);
     });
-    it('expect #KidsAcademy to exist' , function(){
+    it('expect #SoftwareAcademy to exist' , function(){
         var softwareAcademy = document.getElementById('#SoftwareAcademy');
         expect(softwareAcademy).to.exist;
     });
