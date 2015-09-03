@@ -197,14 +197,14 @@ function questionChanger() {
                         }, function (response) {
                     });
                     window.location.assign('/');
-                }else{
+                }
+            }
+        }else{
 					alert("Start again " + category.type + " academy");
 					localStorage.setItem("points", $points - currentCategoryPoints);
 					localStorage.setItem("category", JSON.stringify({"type":category.type,"currentQuestion":0}));
 					window.location.assign('#/category');
 				}
-            }
-        }
     });
 }
 
