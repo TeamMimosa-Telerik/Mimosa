@@ -174,7 +174,7 @@ function questionChanger() {
                     category.currentQuestion = 0;
                     localStorage.setItem("category", JSON.stringify(category));
 
-                    
+                    window.location.assign('#/category');
                     // Facebook with URL : https://mimosa.herokuapp.com/
                     FB.ui(
                         {
@@ -184,8 +184,8 @@ function questionChanger() {
                         });
 
                     //Facebook END
-
-
+                }else{
+                    alert("You are telerik ninja!");
                 }
             }
         }
