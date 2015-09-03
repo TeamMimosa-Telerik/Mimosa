@@ -50,7 +50,7 @@ function thirdPage() {
     $asideBar.append($announcer);
     //$asideBar.append($categoryContainer);
     $asideBar.append($top5users);
-    $section.append('<div id="questionHolder" class="col-md-9">');
+    $section.append('<div id="questionHolder" class="col-md-9 col-sm-12 col-xs-12">');
     $section.append($asideBar);
     thirdPageWrapper.append($section);
 
