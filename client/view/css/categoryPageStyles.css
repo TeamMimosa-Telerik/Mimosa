@@ -13,7 +13,8 @@ img {
 
 #header {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 75px;
+    font-size: 50px;
+    font-size: 5vw;
     font-weight: 500;
     color: #F8F8F8;
     margin-top: 23px;
