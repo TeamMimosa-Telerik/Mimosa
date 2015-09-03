@@ -9,7 +9,7 @@ function questionManipulation() {
 
 function questionChanger() {
     if (localStorage.getItem("points") === null) {
-        localStorage.setItem("points");
+        localStorage.setItem("points", 0);
     }
 
     if (localStorage.getItem("badge") === null) {
