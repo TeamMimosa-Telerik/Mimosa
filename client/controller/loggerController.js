@@ -1,7 +1,7 @@
-import sign from '../model/signin.js';
-import signO from '../model/signout.js';
-import signU from '../model/signup.js';
-import scoreObj from '../model/score.js'
+import signInModule from '../model/signin.js';
+import signOutModule from '../model/signout.js';
+import signUpModule from '../model/signup.js';
+import scoreObj from '../model/score.js';
 
 function loggerEvents() {
 
@@ -20,7 +20,7 @@ function loggerEvents() {
     $('#submit-login').click(function () {
         var username = $('#username-login').val();
         var password = $('#password-login').val();
-        sign.signIn(username, password)
+        signInModule.signIn(username, password)
             .then(function (user) {
                 localStorage.setItem('points', 0);
                 //alert('The user is set');
@@ -43,7 +43,7 @@ function loggerEvents() {
         user.set("username", username);
         user.set("password", password);
         user.set("email", email);
-        signU.signUp(user).then(function (user) {
+        signUpModule.signUp(user).then(function (user) {
             alert('Thanks for your sign up');
             $('#signout').show();
             $('#login').hide();
@@ -62,7 +62,7 @@ function loggerEvents() {
 
         pointsObject.init(username, score);
         pointsObject.save().then(function () {
-            signO.signOut();
+            signOutModule.signOut();
             localStorage.clear();
             $('#signout').hide();
             $('#login').show();

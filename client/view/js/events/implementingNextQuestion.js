@@ -21,8 +21,6 @@ function questionChanger() {
      
     $('#currentPlayerPoints').html($points);
 
-
-
     var $countOfUnlockedBadges = 0;
 
     var arrayQuestions = questionManipulation();
@@ -33,6 +31,7 @@ function questionChanger() {
     var category = JSON.parse(localStorage.getItem('category'));
     var type = category.type;
     var currentQuestion = +category.currentQuestion;
+    $('#currentCorrectAnsweres').text(currentQuestion);
     //console.log("TYPEEEEEE");
     //console.log(type);
 

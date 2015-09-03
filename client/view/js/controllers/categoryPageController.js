@@ -1,15 +1,12 @@
 "use strict"
 import SecondPage from '../view/categoryPageCreation.js';
 
-
-//TODO: REMOVE GLOBAL VARIABLES
 var categoryQuestions;
 var typeCategory;
 
 var categoryPageIIFE = (function(){
 	// var categoryQuestions;
 	function init() {
-		console.log("IN CATEGORY PAGE INIT");
 
 		var $body = $('body');
 		$body.empty();
@@ -46,7 +43,6 @@ var categoryPageIIFE = (function(){
     		$('#fourth-category-btn').removeClass('blured');
     	}
 
-
     	$('#first-category-btn').click(function () {
 
 	    	if (!badgesObject.kids) {
@@ -56,8 +52,6 @@ var categoryPageIIFE = (function(){
 		        $.getJSON("https://api-mimosa.herokuapp.com/kidsAcademyQuestions")
 		            .done(function(result) {
 		                categoryQuestions = result;
-		                console.log("RESSSSUUUULR");
-		                console.log(result);
 		                typeCategory = 'kids';
 		                window.location.assign("#/question");
 		            });   
@@ -136,13 +130,9 @@ var categoryPageIIFE = (function(){
 	    return categoryQuestions;
 	}
 
-	//function getTypeCategory(){
-	//    return typeCategory;
-	//}
 	return {
 		init:init,
 		getQuestions:getQuestions
-		//getTypeCategory:getTypeCategory
 	};
 
 }());
