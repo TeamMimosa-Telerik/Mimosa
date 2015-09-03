@@ -22,7 +22,7 @@ function questionChanger() {
     }
 
 
-
+	var currentCategoryPoints = 0;
     var $points =  +localStorage.getItem("points");
      
     $('#currentPlayerPoints').html($points);
@@ -149,6 +149,7 @@ function questionChanger() {
         //console.log('aaaaaaaaaaaaaaaaabbbbbbbbbbbbb');
         //console.log($id);
         if ($id.toString() == arrayQuestions[properties[$element]].answer.toString()) {
+			currentCategoryPoints+=arrayQuestions[properties[$element]].pointsOnGuessing;
             $points += arrayQuestions[properties[$element]].pointsOnGuessing;
             localStorage.setItem('points', $points);
             $('#currentPlayerPoints').html(localStorage.getItem("points"));
@@ -196,14 +197,12 @@ function questionChanger() {
                         }, function (response) {
                     });
                     window.location.assign('/');
-                }
-
-                FB.ui(
-                        {
-                            method: 'share',
-                            href: 'https://mimosas.herokuapp.com/'
-                        }, function (response) {
-                });
+                }else{
+					alert("Start again " + category.type + " academy");
+					localStorage.setItem("points", $points - currentCategoryPoints);
+					localStorage.setItem("category", JSON.stringify({"type":category.type,"currentQuestion":0}));
+					window.location.assign('#/category');
+				}
             }
         }
     });
