@@ -1,4 +1,3 @@
-
 body {
     background-color: black;
     padding: 0;
@@ -8,41 +7,52 @@ body {
 header {
     padding: 0;
     text-align: center;
+	width:100%;
 }
 
 #badgeContainer {
-    border: 2px solid white;
+    border: 1px solid white;
     display: inline-block;
     background-color: black;
-    border-radius: 10px;
+	position:relative;
+	padding:0;
+	left:1.3%;
 }
 
 .blured {
     opacity: 0.3;
+	border:1px solid transparent;
 }
 
 #badgeContainer > img {
-    width: 25%;
+	display:inline-block;
+	padding:0px;
+    width: 23%;
+	margin-right:1%;
+	border:1px solid red;
 }
-
-
+#badgeContainer > img:last-of-type {
+	margin-right:0%;
+}
 
 #playerAndPoints {
     display: inline-block;
     background-color: #E3E3E3;
     border-radius: 0px 0px 0px 8px;
+	position:relative;
+	left:1%;
 }
 
-    #playerAndPoints > span, a {
-        font-weight: bold;
-        font-size: 24px;
-        margin-left: 20px;
-        color: black;
-    }
+#playerAndPoints > span, a {
+	font-weight: bold;
+	font-size: 24px;
+	margin-left: 20px;
+	color: black;
+}
 
-    #playerAndPoints > a {
-        color: black;
-    }
+#playerAndPoints > a {
+	color: black;
+}
 
 #separator {
     border: 1px solid black;
@@ -56,7 +66,19 @@ header {
     display: inline-block;
     margin-top: 17%;
     border-radius: 5px;
-     background-color:white;
+    background-color:white;
+	position:relative;
+	left:1%;
+}
+
+#aside ul { 
+	list-style-type:none;
+	border:1px solid black;
+	background-color:grey;
+	color:yellow;
+}
+#aside ul > li{ 
+	color:lime;
 }
 
 #announcer {
@@ -64,75 +86,50 @@ header {
     padding: 5px 0px 5px 0px;
 }
 
-    #announcer a {
-        color: red;
-    }
+#announcer a {
+	color: red;
+}
 
 #categoryContainer {
     display: none;
     background-color: black;
 }
 
-    #categoryContainer > div {
-        text-align: center;
-    }
+#categoryContainer > div {
+	text-align: center;
+}
 
-        #categoryContainer > div:last-of-type {
-            border-radius: 0px 0px 10px 10px;
-        }
+#categoryContainer > div:last-of-type {
+	border-radius: 0px 0px 10px 10px;
+}
 
-        #categoryContainer > div > a {
-            text-decoration: none;
-            color: lime;
-        }
-
-#arrow {
-    height: 23px;
-    margin-left: 5px;
-    vertical-align: bottom;
+#categoryContainer > div > a {
+	text-decoration: none;
+	color: lime;
 }
 
 section {
     height: 85%;
+	width:100%;
 }
 
 hr {
     color: lime;
 }
 
-footer {
-    height: 10%;
-    background: #28d642; /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover, #28d642 22%, #28d642 22%, #28d642 24%, #28d642 24%, #28d642 26%, #000000 68%, #274223 100%, #000000 100%); /* FF3.6+ */
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(22%,#28d642), color-stop(22%,#28d642), color-stop(24%,#28d642), color-stop(24%,#28d642), color-stop(26%,#28d642), color-stop(68%,#000000), color-stop(100%,#274223), color-stop(100%,#000000)); /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(center, ellipse cover, #28d642 22%,#28d642 22%,#28d642 24%,#28d642 24%,#28d642 26%,#000000 68%,#274223 100%,#000000 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover, #28d642 22%,#28d642 22%,#28d642 24%,#28d642 24%,#28d642 26%,#000000 68%,#274223 100%,#000000 100%); /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover, #28d642 22%,#28d642 22%,#28d642 24%,#28d642 24%,#28d642 26%,#000000 68%,#274223 100%,#000000 100%); /* IE10+ */
-    background: radial-gradient(ellipse at center, #28d642 22%,#28d642 22%,#28d642 24%,#28d642 24%,#28d642 26%,#000000 68%,#274223 100%,#000000 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#28d642', endColorstr='#000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-    text-align: center;
-    margin-top: 25px;
-}
-
-    footer h2 {
-        display: inline-block;
-    }
-
 .answeredCount {
     color: orange;
     /*margin-top:40px;*/
     display: inline-block;
-    font-size: 72px;
+    font-size: 2em;
     position: relative;
-    left: -35px;
     vertical-align: central;
 }
 
 #answerText {
+	font-size: 2em;
     color: orange;
     position: relative;
-    left: -60px;
-    font-size: 52px;
 }
 
 .percental {
@@ -147,14 +144,13 @@ footer {
     width: 45%;
     margin-left: 3%;
     margin-bottom: 5%;
-    border-radius: 15%;
-    
+    border-radius: 15%;    
 }
 
-    .percental > span {
-        color: white;
-        font-size: 1.3em;
-    }
+.percental > span {
+	color: white;
+	font-size: 1.3em;
+}
 
 #questionHeader > h2 {
     margin-top: 10%;
@@ -187,17 +183,49 @@ footer {
         width: 100%;
         margin-top:1%;
     }   
-     .percental > span {
+    .percental > span {
         font-size: 1em;
     }
 }
+@media (max-width: 750px) {
+    #badgeContainer > img { 
+		width:14%;
+		margin-top:1%;
+		margin-bottom:1%;
+	}
+}
+
+@media (max-width: 720px) {
+	#badgeContainer > img { 
+		width:14%;
+		margin-top:1%;
+		margin-bottom:1%;		
+	}
+	#badgeContainer  { 
+		text-align:left;		
+	}	
+}
+
 @media (max-width: 600px) {
-     .percental > span {
+    .percental > span {
         font-size: 0.7em;
-    }
+    }	
+	.percental { 
+		width:38%;
+	}
 }
 @media (max-width: 400px) {
-     .percental > span {
+    .percental > span {
         font-size: 0.4em;
-    }
+    }		
 }
+
+@media (max-width: 350px) {
+    .percental { 
+		width:42%;
+	}	
+}
+
+
+
+
