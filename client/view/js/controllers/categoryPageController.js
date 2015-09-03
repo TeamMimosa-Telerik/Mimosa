@@ -16,8 +16,16 @@ var categoryPageIIFE = (function(){
 	    var secondPage = page2.secondPageCreation();
 	    $body.append(secondPage);
 
-	    $('#first-category-btn').click(function () {
-
+	    if (localStorage.getItem("category") === null) {
+        	localStorage.setItem("category", JSON.stringify({'type': "", 'currentQuestion':0}));
+    	}
+    	var retrievedObject = localStorage.getItem('category');
+    
+    	
+    	var category = JSON.parse(retrievedObject);
+	    $('#first-category-btn').click(function () {	    	
+    		category.type = "kids";
+            localStorage.setItem("category", JSON.stringify(category));
 	    	//Do not delete it
 	        $.getJSON("https://api-mimosa.herokuapp.com/kidsAcademyQuestions")
 	        		.done(function(result) {
@@ -29,6 +37,8 @@ var categoryPageIIFE = (function(){
 	    });
 
 	    $('#second-category-btn').click(function () {
+	    	category.type= "school";
+            localStorage.setItem("category", JSON.stringify(category));
 
 	        $.getJSON("https://api-mimosa.herokuapp.com/schoolAcademyQuestions")
 	        		.done(function(result) {
@@ -40,6 +50,9 @@ var categoryPageIIFE = (function(){
 	    });
 
 	    $('#third-category-btn').click(function () {
+	    	category.type= "algo";
+            localStorage.setItem("category", JSON.stringify(category));
+
 	        $.getJSON("https://api-mimosa.herokuapp.com/algoAcademyQuestions")
 	        	    .done(function(result) {
 				          categoryQuestions = result;
@@ -49,6 +62,9 @@ var categoryPageIIFE = (function(){
 	    });
 
 	    $('#fourth-category-btn').click(function () {
+	    	category.type = "software";
+            localStorage.setItem("category", JSON.stringify(category));
+
 	        $.getJSON("https://api-mimosa.herokuapp.com/softAcademyQuestions")
 	        		.done(function(result) {
 				          categoryQuestions = result;

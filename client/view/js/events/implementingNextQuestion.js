@@ -7,8 +7,6 @@ import json from '../controllers/categoryPageController.js';
 
 
 function questionManipulation() {
-    var i=0;
-   // var arrayQuestions = questions.dataHolder()();
     var arrayQuestions = json.categoryPageIIFE.getQuestions();
     console.log('JSSOOOOOn');
     console.log(arrayQuestions);
@@ -17,7 +15,7 @@ function questionManipulation() {
 
 function questionChanger() {
     if (localStorage.getItem("points") === null) {
-      localStorage.setItem("points");
+        localStorage.setItem("points");
     }
 
     if (localStorage.getItem("badge") === null) {
@@ -34,8 +32,9 @@ function questionChanger() {
     //console.log("ARRAY QUESTIONS");
     //console.log(arrayQuestions);
 
-    //drago use this variable
-    var type = json.categoryPageIIFE.getTypeCategory();
+    var category = JSON.parse(localStorage.getItem('category'));
+    var type = category.type;
+    var currentQuestion = +category.currentQuestion;
     //console.log("TYPEEEEEE");
     //console.log(type);
 
@@ -70,7 +69,6 @@ function questionChanger() {
          $('#' + 'software').removeClass('blured');
     }
 
-    var $element = 0;
     $('#totalAnswersExpected').text(properties.length);
 
 
@@ -142,7 +140,7 @@ function questionChanger() {
         //console.log("CONTENT");
         //console.log($content.html());
     }
-
+    var $element = currentQuestion;
     implementNextQuestion(arrayQuestions[properties[$element]]);
 
     $('#questionHolder').on('click', '.percental', function () {
@@ -157,11 +155,13 @@ function questionChanger() {
             localStorage.setItem('points', $points);
             $('#currentPlayerPoints').html(localStorage.getItem("points"));
             $element += 1;
+            category.currentQuestion = $element;
+            localStorage.setItem("category", JSON.stringify(category));
 
             //WHAT IS THIS
             $('#currentCorrectAnsweres').text($element);   //POINTS REFRESH
 
-            if ($element < properties.length) {                      //IF THE LAST QUESTION OF THIS CATEGORY IS NOT!!! ANSWERED
+            if ($element < properties.length) {                  //IF THE LAST QUESTION OF THIS CATEGORY IS NOT!!! ANSWERED
                 implementNextQuestion(arrayQuestions[properties[$element]]);
 
                 // implementNextQuestion(arrayQuestions[properties[$element]]);
@@ -188,10 +188,11 @@ function questionChanger() {
                     badges[type] = true;
 
                     localStorage.setItem("badge", JSON.stringify(badges));
+                    localStorage.setItem("currentQuestion", 0);
                     
-                     $('#' + type).removeClass('blured');
-
-                    
+                    $('#' + type).removeClass('blured');
+                    category.currentQuestion = 0;
+                    localStorage.setItem("category", JSON.stringify(category));
                     // Facebook with URL : https://mimosa.herokuapp.com/
                     FB.ui(
                         {
