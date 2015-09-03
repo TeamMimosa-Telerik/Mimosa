@@ -34,72 +34,100 @@ var categoryPageIIFE = (function(){
 	    var category = JSON.parse(retrievedObject);
     	$('#first-category-btn').removeClass('blured');
 
+    	if (badgesObject.kids) {
+    		$('#second-category-btn').removeClass('blured');
+    	}
+
+    	if (badgesObject.school) {
+    		$('#third-category-btn').removeClass('blured');
+    	}
+
+    	if (badgesObject.algo) {
+    		$('#fourth-category-btn').removeClass('blured');
+    	}
+
+
     	$('#first-category-btn').click(function () {
-    		category.type = "kids";
-	        localStorage.setItem("category", JSON.stringify(category));
-	        //Do not delete it
-	        $.getJSON("https://api-mimosa.herokuapp.com/kidsAcademyQuestions")
-	            .done(function(result) {
-	                categoryQuestions = result;
-	                console.log("RESSSSUUUULR");
-	                console.log(result);
-	                typeCategory = 'kids';
-	                window.location.assign("#/question");
-	            });     
-    	});
 
-	    
-
-	   	if (badgesObject.kids) {
-	   		$('#second-category-btn').removeClass('blured');
-		    $('#second-category-btn').click(function () {
-		    	
-		        category.type= "school";
+	    	if (!badgesObject.kids) {
+	    		category.type = "kids";
 		        localStorage.setItem("category", JSON.stringify(category));
-
-		        $.getJSON("https://api-mimosa.herokuapp.com/schoolAcademyQuestions")
+		        //Do not delete it
+		        $.getJSON("https://api-mimosa.herokuapp.com/kidsAcademyQuestions")
 		            .done(function(result) {
 		                categoryQuestions = result;
-		                typeCategory = 'school';
+		                console.log("RESSSSUUUULR");
+		                console.log(result);
+		                typeCategory = 'kids';
 		                window.location.assign("#/question");
+		            });   
+		    }else{
+		    	alert("You have opened this badge!");
+		    }  
+	    });
+
+	 	$('#second-category-btn').click(function () {
+		    if (!badgesObject.school){
+		    		if(badgesObject.kids) {
+				        category.type= "school";
+				        localStorage.setItem("category", JSON.stringify(category));
+
+				        $.getJSON("https://api-mimosa.herokuapp.com/schoolAcademyQuestions")
+				            .done(function(result) {
+				                categoryQuestions = result;
+				                typeCategory = 'school';
+				                window.location.assign("#/question");
+			            });
+				    }
+	        }else{
+	        	alert("You have opened this badge!");
+	        }
+
+		});
+    	
+	   	$('#third-category-btn').click(function () {
+	   		if (!badgesObject.algo){
+
+		   		if(badgesObject.school) {
+				
+			    	category.type= "algo";
+			        localStorage.setItem("category", JSON.stringify(category));
+
+			        $.getJSON("https://api-mimosa.herokuapp.com/algoAcademyQuestions")
+			            .done(function(result) {
+			                categoryQuestions = result;
+			                typeCategory = 'algo';
+			                window.location.assign("#/question");
 		            });
-		        
+			    }
+			        
+		    }else{
+	        	alert("You have opened this badge!");
+	        }
+			
+		});
 
-		    });
-		}
+	   	$('#fourth-category-btn').click(function () {
+			if (!badgesObject.software){
+				if(badgesObject.algo) {
+				
 
-		if (badgesObject.school) {
-			$('#third-category-btn').removeClass('blured')
-		    $('#third-category-btn').click(function () {
-		    	category.type= "algo";
-		        localStorage.setItem("category", JSON.stringify(category));
+			        category.type = "software";
+			        localStorage.setItem("category", JSON.stringify(category));
 
-		        $.getJSON("https://api-mimosa.herokuapp.com/algoAcademyQuestions")
-		            .done(function(result) {
-		                categoryQuestions = result;
-		                typeCategory = 'algo';
-		                window.location.assign("#/question");
-		            });
-		        
-		    });
-		}
+			        $.getJSON("https://api-mimosa.herokuapp.com/softAcademyQuestions")
+			            .done(function(result) {
+			                categoryQuestions = result;
+			                typeCategory = 'software';
+			                window.location.assign("#/question");
+			            });
 
-		if (badgesObject.algo) {
-			$('#fourth-category-btn').removeClass('blured')
-		    $('#fourth-category-btn').click(function () {
-		    	
-		        category.type = "software";
-		        localStorage.setItem("category", JSON.stringify(category));
-
-		        $.getJSON("https://api-mimosa.herokuapp.com/softAcademyQuestions")
-		            .done(function(result) {
-		                categoryQuestions = result;
-		                typeCategory = 'software';
-		                window.location.assign("#/question");
-		            });
+			    }
 			    
-		    });
-		}
+		    }else{
+		        	alert("You have opened this badge!");
+		        }
+		});
 
 	}
 

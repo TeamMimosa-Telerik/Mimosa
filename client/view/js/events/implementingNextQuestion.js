@@ -169,7 +169,6 @@ function questionChanger() {
                     badges[type] = true;
 
                     localStorage.setItem("badge", JSON.stringify(badges));
-                    localStorage.setItem("currentQuestion", 0);
                     
                     $('#' + type).removeClass('blured');
                     category.currentQuestion = 0;
