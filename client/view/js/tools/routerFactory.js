@@ -19,8 +19,9 @@ function RouterFactory(){
 			 routes.forEach(function(route){
 			 	if(route.url === url){
 
-			 		if(url != '/login' && Parse.User.current() == null) {
+			 		if(url != '/' && Parse.User.current() == null) {
 			            alert('You must be signed in to continue');
+			            window.location.assign("");
 			        }else{
 			        	route.callback();
 			        }
