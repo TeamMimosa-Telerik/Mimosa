@@ -159,11 +159,14 @@ hr {
     color: whitesmoke;
     font-weight: bold;
     font-size: 2.2rem;
+    font-size: 2.2vw;
 }
 
 #questionHolder {
     text-align: center;
     display: inline-block;
+    font-size: 1rem;
+    font-size: 1vw;
     height: 100%;
 }
 
