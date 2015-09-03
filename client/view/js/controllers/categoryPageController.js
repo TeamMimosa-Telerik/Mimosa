@@ -73,7 +73,6 @@ var categoryPageIIFE = (function(){
 	                window.location.assign("#/question");
 	            });
 	    });
-		questions.getQuestions();
 
 	}
 
