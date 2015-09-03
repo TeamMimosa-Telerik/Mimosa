@@ -7,8 +7,8 @@ function thirdPage() {
     var thirdPageWrapper = $('<div id="thirdPageWrapper">'),
     //$container = $('<div id="container">'),
         $header = $('<header class="row">'),
-        $badgeHolder = $('<div id="badgeContainer" class="col-md-3">'),
-        $currentCorrectAnswersContainer = $(' <div id="countsContainer" class="col-md-6">'),
+        $badgeHolder = $('<div id="badgeContainer" class="col-md-4">'),
+        $currentCorrectAnswersContainer = $(' <div id="countsContainer" class="col-md-5">'),
         $playerNameAndPoints = $('<div id="playerAndPoints" class="col-md-3">');
 
     $badgeHolder.append('<img id="kids" class="blured" src="../img/kids.jpg" />');
