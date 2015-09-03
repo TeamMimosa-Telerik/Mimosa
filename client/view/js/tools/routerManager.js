@@ -1,20 +1,15 @@
 import QP from '../controllers/questionPageController.js';
 import LP from '../controllers/loginPageController.js';
 import CP from '../controllers/categoryPageController.js';
-
 import Factory from './routerFactory.js';
-import Device from './router.js'
-
+//import Device from './router.js'
 
 function routerManager() {
-    //app.init();
-
     var routerFactory = new Factory.RouterFactory();
-    console.log('first init');
 
     routerFactory.addRoute({
         url: "/question",
-        callback: QP.init,
+        callback: QP.init
 
     });
 
@@ -30,7 +25,6 @@ function routerManager() {
     });
 
     routerFactory.init();
-    // queries
 }
 
 export default {routerManager};

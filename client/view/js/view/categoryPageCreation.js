@@ -1,4 +1,4 @@
-﻿import 'jquery';
+﻿import '../../lib/jquery/dist/jquery.js';
 //import 'bootstrap';
 
 function secondPageCreation() {
@@ -9,14 +9,14 @@ function secondPageCreation() {
         $header = $('<div class="col-xs-6 col-xs-offset-3" id="header">Pick a category</div>'),
         $secondRow = $('<div class="row">'),
         $firstCategory = $('<a id="first-category-btn" class="col-xs-3 col-xs-offset-2">'),
-        $kidsAcademy = $('<img src="../../img/kids.jpg" class="img-responsive img-rounded" id="KidsAcademy" />'),
+        $kidsAcademy = $('<img src="../img/kids.jpg" class="img-responsive img-rounded" id="KidsAcademy" />'),
         $secondCategory = $('<a id="second-category-btn"  class="col-xs-3 col-xs-offset-2">'),
-        $schoolAcademy = $('<img src="../../img/school.jpg" class="img-responsive img-rounded" id="SchoolAcademy" />'),
+        $schoolAcademy = $('<img src="../img/school.jpg" class="img-responsive img-rounded" id="SchoolAcademy" />'),
         $thirdRow = $('<div class="row">'),
         $thirdCateogry = $('<a id="third-category-btn" class="col-xs-3 col-xs-offset-2">'),
-        $algoAcademy = $('<img src="../../img/algo.jpg" class="img-responsive img-rounded" id="AlgoAcademy" />'),
+        $algoAcademy = $('<img src="../img/algo.jpg" class="img-responsive img-rounded" id="AlgoAcademy" />'),
         $fourthCategory = $('<a id="fourth-category-btn"  class="col-xs-3 col-xs-offset-2">'),
-        $softwareAcademy = $('<img src="../../img/software.jpg" class="img-responsive img-rounded" id="SoftwareAcademy" />');
+        $softwareAcademy = $('<img src="../img/software.jpg" class="img-responsive img-rounded" id="SoftwareAcademy" />');
 
     //Appending first row - Pick a category header
     $FirstRow.append($header);

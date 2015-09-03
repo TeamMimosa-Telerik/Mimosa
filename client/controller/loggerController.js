@@ -2,6 +2,7 @@ import sign from '../model/signin.js';
 import signO from '../model/signout.js';
 import signU from '../model/signup.js';
 import scoreObj from '../model/score.js'
+
 function loggerEvents() {
 
     var currentUser = Parse.User.current();
@@ -17,28 +18,20 @@ function loggerEvents() {
     }
 
     $('#submit-login').click(function () {
-        // if(username!=undefined && password!=undefined) {
-        // console.log(signIn);
         var username = $('#username-login').val();
         var password = $('#password-login').val();
         sign.signIn(username, password)
             .then(function (user) {
                 localStorage.setItem('points', 0);
-                alert('The user is set');
+                //alert('The user is set');
                 $('#signout').show();
-                console.log($('#signout'));
                 $('#login').hide();
                 $('#signup').hide();
                 $('#user-name').html('Welcome ' + Parse.User.current().get('username')).show();
 
             }, function (error) {
-                console.log(error.message);
-                alert(error.message);
+                //alert(error.message);
             });
-        //console.log('Username '+user.get('username'));
-
-
-        // }
     });
 
     $('#submit-signup').click(function () {
@@ -61,12 +54,12 @@ function loggerEvents() {
         });
 
     });
+
     $('#signout').click(function () {
         var username = Parse.User.current().get('username');
         var score = localStorage.getItem('points');
         var pointsObject = scoreObj.createGameScoreObject();
-        console.log(username);
-        console.log(score);
+
         pointsObject.init(username, score);
         pointsObject.save().then(function () {
             signO.signOut();
@@ -85,11 +78,10 @@ function loggerEvents() {
                 $('#login-trigger').find('span').html('&#x25BC;');
                 $('#login-trigger').toggleClass('active');
             }
-            alert('The score is saved');
+            //alert('The score is saved');
         }, function (error) {
             alert(error.message);
         });
-
 
     });
 
