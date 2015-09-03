@@ -9,10 +9,11 @@ function init() {
     $body.empty();
     var thirdPage = ThirdPage.thirdPage();
     $body.append(thirdPage);
-
+    $('#log-out-third-page-name').html("Log out "+Parse.User.current().get('username'));
     Implementator.questionChanger();
 
-    $('#log-out-third-page').click(function(){
+
+    $('#log-out-third-page-name').click(function(){
         //alert('pred sign out');
 
         var username = Parse.User.current().get('username');

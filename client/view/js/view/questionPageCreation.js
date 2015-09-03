@@ -19,7 +19,7 @@ function thirdPage() {
     $currentCorrectAnswersContainer.append('<span id="currentCorrectAnsweres" class="answeredCount">0</span>');
     $currentCorrectAnswersContainer.append('<span class="answeredCount">/</span>');
     $currentCorrectAnswersContainer.append('<span id="totalAnswersExpected" class="answeredCount">10</span>');
-    $playerNameAndPoints.append('<a href="#" id="playerNameContainer">Player</a>');
+    $playerNameAndPoints.append('<a id="log-out-third-page-name">Player</a>');
     $playerNameAndPoints.append('<div id="separator"></div>');
     $playerNameAndPoints.append('<span id="currentPlayerPoints">0</span>');
     $header.append($badgeHolder);
@@ -35,8 +35,8 @@ function thirdPage() {
         $kidsAcad = $('<div class="category">'),
         $schoolAcad = $('<div class="category">'),
         $algoAcad = $('<div class="category">'),
-        $softwareAcad = $('<div class="category">'),
-        $logoutLink = $('<a id="log-out-third-page">Log out</a>');
+        $softwareAcad = $('<div class="category">');
+        // $logoutLink = $('<a id="log-out-third-page">Log out</a>');
     ////$kidsAcad.append('<a href="#">Kids Academy</a>');
     //$schoolAcad.append('<a href="#">School Academy</a>');
     //$algoAcad.append('<a href="#">Algo Academy</a>');
@@ -46,7 +46,7 @@ function thirdPage() {
     //$categoryContainer.append($algoAcad);
     //$categoryContainer.append($softwareAcad);
     $announcer.append('<a href="#/category">Select category</a>');
-    $asideBar.append($logoutLink);
+    // $asideBar.append($logoutLink);
     $asideBar.append($announcer);
     //$asideBar.append($categoryContainer);
     $asideBar.append($top5users);

@@ -18,7 +18,10 @@ function questionChanger() {
     }
 
     var $points =  +localStorage.getItem("points");
-     $('#currentPlayerPoints').html($points);
+     
+    $('#currentPlayerPoints').html($points);
+
+
 
     var $countOfUnlockedBadges = 0;
 

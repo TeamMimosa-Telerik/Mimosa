@@ -25,6 +25,7 @@ var categoryPageIIFE = (function(){
 	        localStorage.setItem('badge', JSON.stringify(badges));
 	    }
 
+
 		var retrievedObject = localStorage.getItem('category');
     
     	var badgesObject = JSON.parse(localStorage.getItem('badge'));
@@ -40,6 +41,8 @@ var categoryPageIIFE = (function(){
 	        $.getJSON("https://api-mimosa.herokuapp.com/kidsAcademyQuestions")
 	            .done(function(result) {
 	                categoryQuestions = result;
+	                console.log("RESSSSUUUULR");
+	                console.log(result);
 	                typeCategory = 'kids';
 	                window.location.assign("#/question");
 	            });     
