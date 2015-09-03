@@ -17,11 +17,17 @@ function questionChanger() {
         localStorage.setItem('badge', JSON.stringify(badges));
     }
 
+    if (localStorage.getItem("countOfUnlockedBadges") === null) {
+        localStorage.setItem("countOfUnlockedBadges", 0);
+    }
+
+
+
     var $points =  +localStorage.getItem("points");
      
     $('#currentPlayerPoints').html($points);
 
-    var $countOfUnlockedBadges = 0;
+    var $countOfUnlockedBadges = +localStorage.getItem("countOfUnlockedBadges");
 
     var arrayQuestions = questionManipulation();
 
@@ -162,6 +168,7 @@ function questionChanger() {
                 if ($countOfUnlockedBadges < 4) {
 
                     $countOfUnlockedBadges += 1;
+                    localStorage.setItem("countOfUnlockedBadges", $countOfUnlockedBadges);
 
                     alert('Congratulations! You have unlocked a badge!');
 
@@ -173,19 +180,30 @@ function questionChanger() {
                     category.currentQuestion = 0;
                     localStorage.setItem("category", JSON.stringify(category));
 
-                    window.location.assign('#/category');
+                     window.location.assign('#/category');
                     // Facebook with URL : https://mimosa.herokuapp.com/
-                    FB.ui(
+                    
+
+                    //Facebook END
+                }
+
+                if ($countOfUnlockedBadges === 4){
+                    alert("You are telerik ninja!");
+                     FB.ui(
                         {
                             method: 'share',
                             href: 'https://mimosas.herokuapp.com/'
                         }, function (response) {
-                        });
-
-                    //Facebook END
-                }else{
-                    alert("You are telerik ninja!");
+                    });
+                    window.location.assign('/');
                 }
+
+                FB.ui(
+                        {
+                            method: 'share',
+                            href: 'https://mimosas.herokuapp.com/'
+                        }, function (response) {
+                });
             }
         }
     });
