@@ -25,7 +25,7 @@ function init() {
         alert('pred sign out');
         SignOut.signOut().then(function(){
             console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa sign out");
-            // window.location.assign(location.hostname+'/login');
+            window.location.assign("");
         });
 
     });

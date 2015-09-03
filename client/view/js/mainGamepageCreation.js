@@ -36,7 +36,7 @@ function thirdPage() {
         $schoolAcad = $('<div class="category">'),
         $algoAcad = $('<div class="category">'),
         $softwareAcad = $('<div class="category">'),
-    $logoutLink = $('<a id="log-out-third-page" href="#/login">Log out</a>');
+        $logoutLink = $('<a id="log-out-third-page">Log out</a>');
     ////$kidsAcad.append('<a href="#">Kids Academy</a>');
     //$schoolAcad.append('<a href="#">School Academy</a>');
     //$algoAcad.append('<a href="#">Algo Academy</a>');

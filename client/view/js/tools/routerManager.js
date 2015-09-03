@@ -24,7 +24,7 @@ function routerManager() {
     });
 
     routerFactory.addRoute({
-        url: "/login",
+        url: "/",
         callback: LP.init,
         default:true
     });
