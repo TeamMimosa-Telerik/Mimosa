@@ -17,13 +17,17 @@ function questionChanger() {
         localStorage.setItem('badge', JSON.stringify(badges));
     }
 
+    if (localStorage.getItem("countOfUnlockedBadges") === null) {
+        localStorage.setItem("countOfUnlockedBadges", 0);
+    }
+
+
+	var currentCategoryPoints = 0;
     var $points =  +localStorage.getItem("points");
      
     $('#currentPlayerPoints').html($points);
 
-
-
-    var $countOfUnlockedBadges = 0;
+    var $countOfUnlockedBadges = +localStorage.getItem("countOfUnlockedBadges");
 
     var arrayQuestions = questionManipulation();
 
@@ -33,6 +37,7 @@ function questionChanger() {
     var category = JSON.parse(localStorage.getItem('category'));
     var type = category.type;
     var currentQuestion = +category.currentQuestion;
+    $('#currentCorrectAnsweres').text(currentQuestion);
     //console.log("TYPEEEEEE");
     //console.log(type);
 
@@ -144,6 +149,7 @@ function questionChanger() {
         //console.log('aaaaaaaaaaaaaaaaabbbbbbbbbbbbb');
         //console.log($id);
         if ($id.toString() == arrayQuestions[properties[$element]].answer.toString()) {
+			currentCategoryPoints+=arrayQuestions[properties[$element]].pointsOnGuessing;
             $points += arrayQuestions[properties[$element]].pointsOnGuessing;
             localStorage.setItem('points', $points);
             $('#currentPlayerPoints').html(localStorage.getItem("points"));
@@ -163,33 +169,42 @@ function questionChanger() {
                 if ($countOfUnlockedBadges < 4) {
 
                     $countOfUnlockedBadges += 1;
+                    localStorage.setItem("countOfUnlockedBadges", $countOfUnlockedBadges);
 
                     alert('Congratulations! You have unlocked a badge!');
 
                     badges[type] = true;
 
                     localStorage.setItem("badge", JSON.stringify(badges));
-                    localStorage.setItem("currentQuestion", 0);
                     
                     $('#' + type).removeClass('blured');
                     category.currentQuestion = 0;
                     localStorage.setItem("category", JSON.stringify(category));
 
-                    
+                     window.location.assign('#/category');
                     // Facebook with URL : https://mimosa.herokuapp.com/
-                    FB.ui(
+                    
+
+                    //Facebook END
+                }
+
+                if ($countOfUnlockedBadges === 4){
+                    alert("You are telerik ninja!");
+                     FB.ui(
                         {
                             method: 'share',
                             href: 'https://mimosas.herokuapp.com/'
                         }, function (response) {
-                        });
-
-                    //Facebook END
-
-
+                    });
+                    window.location.assign('/');
                 }
             }
-        }
+        }else{
+					alert("Start again " + category.type + " academy");
+					localStorage.setItem("points", $points - currentCategoryPoints);
+					localStorage.setItem("category", JSON.stringify({"type":category.type,"currentQuestion":0}));
+					window.location.assign('#/category');
+				}
     });
 }
 
