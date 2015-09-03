@@ -20,27 +20,37 @@ var categoryPageIIFE = (function(){
 			localStorage.setItem("category", JSON.stringify({'type': "", 'currentQuestion': 0}));
 		}
 
+		 if (localStorage.getItem("badge") === null) {
+	        var badges = { 'kids': false, 'algo': false, 'school': false, 'software':false };
+	        localStorage.setItem('badge', JSON.stringify(badges));
+	    }
+
 		var retrievedObject = localStorage.getItem('category');
+    
+    	var badges = JSON.parse(localStorage.getItem('badge'));
 
 
 	    var category = JSON.parse(retrievedObject);
-	    $('#first-category-btn').click(function () {
-	    	if (!$('#first-category-btn').hasClass('blured')) {
-	    		category.type = "kids";
-		        localStorage.setItem("category", JSON.stringify(category));
-		        //Do not delete it
-		        $.getJSON("https://api-mimosa.herokuapp.com/kidsAcademyQuestions")
-		            .done(function(result) {
-		                categoryQuestions = result;
-		                typeCategory = 'kids';
-		                window.location.assign("#/question");
-		            });
-	        }
+    	$('#first-category-btn').removeClass('blured');
 
-	    });
+    	$('#first-category-btn').click(function () {
+    		category.type = "kids";
+	        localStorage.setItem("category", JSON.stringify(category));
+	        //Do not delete it
+	        $.getJSON("https://api-mimosa.herokuapp.com/kidsAcademyQuestions")
+	            .done(function(result) {
+	                categoryQuestions = result;
+	                typeCategory = 'kids';
+	                window.location.assign("#/question");
+	            });     
+    	});
 
-	    $('#second-category-btn').click(function () {
-	    	if (!$('#second-category-btn').hasClass('blured')) {
+	    
+
+	   	if (badges.kids) {
+	   		$('#second-category-btn').removeClass('blured');
+		    $('#second-category-btn').click(function () {
+		    	
 		        category.type= "school";
 		        localStorage.setItem("category", JSON.stringify(category));
 
@@ -50,13 +60,15 @@ var categoryPageIIFE = (function(){
 		                typeCategory = 'school';
 		                window.location.assign("#/question");
 		            });
-	        }
+		        
 
-	    });
+		    });
+		}
 
-	    $('#third-category-btn').click(function () {
-	    	if (!$('#third-category-btn').hasClass('blured')) {
-		        category.type= "algo";
+		if (badges.school) {
+			$('#third-category-btn').removeClass('blured')
+		    $('#third-category-btn').click(function () {
+		    	category.type= "algo";
 		        localStorage.setItem("category", JSON.stringify(category));
 
 		        $.getJSON("https://api-mimosa.herokuapp.com/algoAcademyQuestions")
@@ -65,11 +77,14 @@ var categoryPageIIFE = (function(){
 		                typeCategory = 'algo';
 		                window.location.assign("#/question");
 		            });
-	        }
-	    });
+		        
+		    });
+		}
 
-	    $('#fourth-category-btn').click(function () {
-	    	if (!$('#fourth-category-btn').hasClass('blured')) {
+		if (badges.algo) {
+			$('#fourth-category-btn').removeClass('blured')
+		    $('#fourth-category-btn').click(function () {
+		    	
 		        category.type = "software";
 		        localStorage.setItem("category", JSON.stringify(category));
 
@@ -79,8 +94,9 @@ var categoryPageIIFE = (function(){
 		                typeCategory = 'software';
 		                window.location.assign("#/question");
 		            });
-		    }
-	    });
+			    
+		    });
+		}
 
 	}
 
